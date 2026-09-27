@@ -40,6 +40,7 @@ def main():
             page.locator('pagefind-input input').wait_for()
             start = time.monotonic()
             page.locator('pagefind-input input').fill('Wilberforce')
+            page.locator('pagefind-results').scroll_into_view_if_needed()
             page.locator('.search-result').first.wait_for(timeout=60000)
             print(f'First search result in {time.monotonic()-start:.2f}s')
             link = page.locator('.search-result h3 a').first
