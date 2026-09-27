@@ -140,8 +140,7 @@ def main():
 <div class="stat-columns"><div><strong>+{comparison['word_count_increase_pct']:.0f}%</strong><h3>More text to search</h3><p>{original_stats['total_words']/1e6:.1f}m → {glm_stats['total_words']/1e6:.1f}m word tokens</p></div>
 <div><strong>+{comparison['recognized_word_increase_pct']:.0f}%</strong><h3>More recognized words</h3><p>{original_stats['recognized_words']/1e6:.1f}m → {glm_stats['recognized_words']/1e6:.1f}m dictionary matches</p></div>
 <div><strong>{original_stats['unrecognized_pct']:.1f}% → {glm_stats['unrecognized_pct']:.1f}%</strong><h3>Fewer unrecognized forms</h3><p>Share absent from the word list</p></div></div>
-<p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p></section>
-<section class="process"><div class="section-heading"><h2>From scan to search</h2><a href="{url('about/#extraction')}">Inside the process →</a></div>
+<p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p>
 {story}
 <p class="fine-print">Illustrated workflow. Text is linked to source crops, not verified word coordinates. <a href="{url('about/#extraction')}">See real crop overlays ↗</a></p></section>
 <section class="front-notes"><div><h2>Read the source</h2><p>The AME Church’s newspaper, machine-transcribed for discovery. Every result links to its original scan.</p><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s source catalog ↗</a></div>
