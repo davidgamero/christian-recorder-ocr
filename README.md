@@ -73,9 +73,14 @@ refresh from the recorder research workspace:
 
 ```sh
 python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data
+python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v4-20260925/report.json
+# optional: regenerate source-derived teaching figures (requires pillow)
+python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 ```
 
 `corpus/` holds compressed, checksummed text snapshots. `scripts/` exports and builds them; `assets/` styles the site; `.github/workflows/pages.yml` publishes it. builds don't contact archive or run a model. private reviewer data, credentials and machine paths aren't exported.
+
+the front-page stats compare all 2,376 matched scans: **19% more lexical word tokens**, **55% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**. the baseline is archive ocr, not verified pdf-embedded text. these measure coverage, not correctness. visual examples show real column/chunk geometry and crop-level text links; they don't claim word-level alignment.
 
 ## use it as a finding aid
 

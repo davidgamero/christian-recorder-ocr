@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "run": "glm-full-archive-v4-20260925",
+  "paired_scans": 2376,
+  "baseline": "Page-mapped Internet Archive OCR derivative; not verified PDF-embedded text",
+  "original": {
+    "total_words": 17292731,
+    "recognized_words": 12948292,
+    "unrecognized_words": 4344439,
+    "unrecognized_pct": 25.12292014488631,
+    "balanced_score": 66.87825709730015,
+    "balanced_score_repetition_adjusted": 66.84496623990982
+  },
+  "glm": {
+    "total_words": 20503717,
+    "recognized_words": 20070216,
+    "unrecognized_words": 433501,
+    "unrecognized_pct": 2.114255673739547,
+    "balanced_score": 95.72524374856974,
+    "balanced_score_repetition_adjusted": 93.97902037237884
+  },
+  "word_count_increase_pct": 18.568414670881083,
+  "recognized_word_increase_pct": 55.00280654776708,
+  "scored_at": "2026-09-27T17:34:20.550762+00:00",
+  "report_sha256": "4a48073712a1cb7461b6c8187723a3711985dc3c842ea0e6d33819cd71179575",
+  "dictionary_sha256": "e65d99cd074785c2cefc222b3066208e3f229cfb7d53f5734ac5b409ebea1bf2",
+  "note": "Lexical word counts differ from whitespace token counts. Dictionary recognition is not transcription accuracy or recall; repetition, omissions and invented text remain possible."
+}

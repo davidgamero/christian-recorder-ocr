@@ -1,0 +1,30 @@
+{
+  "page_id": "christianrecorder_1868_v8_no16_to_28-p003",
+  "source_sha256": "22f124d2e625e6011275bd1e0ee9e4bf164870b6540453f195dba680ff8ee11e",
+  "task_id": "leaf-0-chunk-3-0-0",
+  "input_sha256": "fba678e6e7ffba4d4de8fa5aee9bc5beafb8a0d9e5af0013b215a6f917f9bc4a",
+  "polygon": [
+    [
+      0.45,
+      0.15540932843042385
+    ],
+    [
+      0.5771428571428572,
+      0.15540932843042385
+    ],
+    [
+      0.5664194865601896,
+      0.5074511321850204
+    ],
+    [
+      0.43737489580203115,
+      0.5074511321850204
+    ]
+  ],
+  "layout_flags": [
+    "possible_text_crossing",
+    "rule_detection_fallback"
+  ],
+  "excerpt": "PETTED MINISTERS.\n\nMen like to say sharp things of their own profession. Clergymen, lawyers, physicians, and all have a way of turning state's evidence on their brethren. The most striking recent instance of this is in the pitby remark of Rev. John Weiss, before the Free Religious Association in Boston: \"Our churches are filled with gentle invalids, veterans of sentiment, nurtured at the public expense, and now lingering out an inglorious but not mute career.\"\n\nThis does not aim to describe the average clergyman, perhaps\u2014the speaker himself bei",
+  "note": "Real saved crop-level geometry; not verified word-level alignment. Detected boundaries may cross text."
+}

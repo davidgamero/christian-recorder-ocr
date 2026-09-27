@@ -38,6 +38,16 @@ def main():
             page.on('request', lambda r: requests.append(r.url))
             page.goto(base)
             page.locator('pagefind-input input').wait_for()
+            assert page.locator('pagefind-input input').bounding_box()['y'] < 350
+            assert '+19%' in page.locator('.stat-columns').inner_text()
+            assert '+55%' in page.locator('.stat-columns').inner_text()
+            assert page.locator('.process-grid figure').count() == 3
+            page.screenshot(path='/tmp/recorder-home-desktop.png', full_page=True)
+            page.set_viewport_size({'width': 390, 'height': 844})
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+            assert page.locator('pagefind-input input').bounding_box()['y'] < 350
+            page.screenshot(path='/tmp/recorder-home-mobile.png', full_page=True)
+            page.set_viewport_size({'width': 1400, 'height': 1000})
             start = time.monotonic()
             page.locator('pagefind-input input').fill('Wilberforce')
             page.locator('pagefind-results').scroll_into_view_if_needed()
