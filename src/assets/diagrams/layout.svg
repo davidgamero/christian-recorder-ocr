@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160" role="img" aria-labelledby="title desc">
+  <title id="title">02 — Detect leaves, masthead and gutters</title>
+  <desc id="desc">A scan splits into two leaves. A sloping masthead cutoff sits above the column boundaries.</desc>
+  <defs><pattern id="print" width="27" height="6" patternUnits="userSpaceOnUse"><path d="M3 3h20" stroke="#b6ad9a"/></pattern></defs>
+  <rect x="21" y="15" width="198" height="125" fill="#fffdf6" stroke="#b6ad9a"/>
+  <rect x="28" y="23" width="86" height="108" fill="none" stroke="#24211b" stroke-width="1.5"/>
+  <rect x="126" y="23" width="86" height="108" fill="none" stroke="#24211b" stroke-width="1.5"/>
+  <path d="M35 51h72v73H35zm98 4h72v69h-72Z" fill="url(#print)"/>
+  <path d="m35 39 72 2m26-1 72 3" stroke="#24211b" stroke-width="4"/>
+  <path d="m28 47 86 4m12-1 86 4" stroke="#7c3024" stroke-width="3"/>
+  <path d="m56 49-1 82m30-81 1 81m68-80-1 80m30-79 1 79" stroke="#376452" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M120 9v137" stroke="#7c3024" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="70" y="153" font-family="Georgia,serif" font-size="11" fill="#376452" text-anchor="middle">gutters</text>
+  <text x="170" y="153" font-family="Georgia,serif" font-size="11" fill="#7c3024" text-anchor="middle">masthead</text>
+</svg>

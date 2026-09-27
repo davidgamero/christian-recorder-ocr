@@ -16,7 +16,7 @@ def export(data):
     manifest = json.loads((folder / 'manifest.json').read_text())
     inventory = json.loads((run / 'dataset.json').read_text())
     page = next(p for p in inventory['pages'] if p['id'] == identity)
-    output = ROOT / 'assets/figures'
+    output = ROOT / 'src/assets/figures'
     output.mkdir(parents=True, exist_ok=True)
     with Image.open(data / page['image']) as im:
         im = im.convert('RGB')

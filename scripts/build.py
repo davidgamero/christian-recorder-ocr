@@ -10,6 +10,7 @@ import shutil
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / 'src'
 OUT = ROOT / "_site"
 BASE = "/" + os.environ.get("BASE_PATH", "/christian-recorder-ocr/").strip("/") + "/"
 if BASE == "//":
@@ -53,7 +54,7 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    shutil.copytree(ROOT / "assets", OUT / "assets")
+    shutil.copytree(SRC / "assets", OUT / "assets")
     catalog = json.loads((ROOT / "corpus/catalog.json").read_text())
     comparison = json.loads((ROOT / 'corpus/comparison.json').read_text())
     if comparison['paired_scans'] != catalog['scans'] or comparison['run'] != catalog['run']:
@@ -101,6 +102,10 @@ def main():
 <p>Scan positions include cards and two-page spreads—not printed page numbers.</p>
 <p>Original member: <code>{e(page['source_page'])}</code></p><p>Output flags: {e(flags)}</p><p>Layout flags: {e(', '.join(page['layout_flags']) or 'none')}</p>
 <p>Source SHA-256: <code>{page['image_sha256']}</code></p></details>
+<aside id="match-navigation" class="match-navigation" data-pagefind-ignore hidden aria-label="Matches in this transcription">
+<span>Find: <strong id="match-query"></strong></span><span id="match-count" role="status" aria-live="polite"></span>
+<button id="match-prev" type="button">← Previous</button><button id="match-next" type="button">Jump to next →</button>
+<a id="back-to-search" href="{url('#search')}">Back to results</a><span id="match-note"></span></aside>
 <article data-pagefind-body><h2 id="transcription">GLM transcription</h2>{transcription(page['text'])}</article>
 <section data-pagefind-ignore><h2>Compare existing OCR</h2>{original}</section><p>{navigation}</p>'''
             write(f'scans/{identity}/index.html', shell(title, body))
@@ -108,7 +113,18 @@ def main():
     volume_list = '<ul class="volume-list">' + "".join(cards) + '</ul>'
     write('volumes/index.html', shell('Browse volumes', '<h1>Browse the archive</h1><p>44 source bundles, ordered by year label. Unknown dates remain explicitly undated.</p>'+volume_list))
     original_stats, glm_stats = comparison['original'], comparison['glm']
-    figure = json.loads((ROOT / 'assets/figures/provenance.json').read_text())
+    figure = json.loads((SRC / 'assets/figures/provenance.json').read_text())
+    steps = [
+        ('scan', 'Start with the scan', 'Keep the original page and its source ID.'),
+        ('layout', 'Find the reading order', 'Separate leaves, mastheads and columns.'),
+        ('chunks', 'Cut readable pieces', 'Small crops preserve the tiny print.'),
+        ('ocr', 'Read in parallel', 'Four GLM requests; CUDA graphs speed decoding.'),
+        ('search', 'Search & check', 'Rejoin the text. Every result links to the scan.'),
+    ]
+    story = '<ol class="pipeline-story">' + ''.join(
+        f'<li><figure><img src="{url("assets/diagrams/" + name + ".svg")}" width="240" height="160" loading="lazy" alt="{e(title + ": " + caption)}">'
+        f'<figcaption><b><span class="step-number">{i:02d}</span> {e(title)}</b><span>{e(caption)}</span></figcaption></figure></li>'
+        for i, (name, title, caption) in enumerate(steps, 1)) + '</ol>'
     home = f'''<section id="search" class="search-front" aria-label="Search the newspaper archive">
 <h1 class="search-heading">Search the archive</h1>
 <pagefind-config bundle-path="{url('pagefind/')}" base-url="{BASE}" excerpt-length="35"></pagefind-config>
@@ -119,21 +135,20 @@ def main():
 <script type="text/pagefind-template"><li class="search-result"><h3><a href="{{{{ url | safeUrl }}}}">{{{{ meta.title }}}}</a></h3><p>{{{{+ excerpt +}}}}</p><p class="result-sources"><a href="{{{{ meta.archive_scan | safeUrl }}}}">Original scan ↗</a> · <a href="{{{{ meta.archive_volume | safeUrl }}}}">Archived volume ↗</a></p></li></script>
 </pagefind-results>
 <noscript>Full-text search requires JavaScript. <a href="{url('volumes/')}">Browse every volume and transcription without JavaScript.</a></noscript></section>
-<section class="extraction-stats" aria-labelledby="stats-title"><div class="section-heading"><h2 id="stats-title">A clearer record</h2><span>New GLM extraction vs. existing Archive OCR</span></div>
+<section class="extraction-stats" aria-labelledby="stats-title"><div class="section-heading"><h2 id="stats-title">What is this?</h2><span>New GLM extraction vs. existing Archive OCR</span></div>
+<p>This project improves optical character recognition (OCR) to extract text from archived newspapers and make it searchable.</p>
 <div class="stat-columns"><div><strong>+{comparison['word_count_increase_pct']:.0f}%</strong><h3>More text to search</h3><p>{original_stats['total_words']/1e6:.1f}m → {glm_stats['total_words']/1e6:.1f}m word tokens</p></div>
 <div><strong>+{comparison['recognized_word_increase_pct']:.0f}%</strong><h3>More recognized words</h3><p>{original_stats['recognized_words']/1e6:.1f}m → {glm_stats['recognized_words']/1e6:.1f}m dictionary matches</p></div>
 <div><strong>{original_stats['unrecognized_pct']:.1f}% → {glm_stats['unrecognized_pct']:.1f}%</strong><h3>Fewer unrecognized forms</h3><p>Share absent from the word list</p></div></div>
 <p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p></section>
 <section class="process"><div class="section-heading"><h2>From scan to search</h2><a href="{url('about/#extraction')}">Inside the process →</a></div>
-<div class="process-grid"><figure><a href="{url('assets/figures/columns.svg')}"><img src="{url('assets/figures/columns.svg')}" width="720" height="947" loading="lazy" alt="Newspaper scan with saved green column boundaries and a blue masthead cutoff"></a><figcaption><b>01 / Find the columns</b><span>Separate mastheads and follow the gutters.</span></figcaption></figure>
-<figure><a href="{url('assets/figures/chunks.svg')}"><img src="{url('assets/figures/chunks.svg')}" width="720" height="947" loading="lazy" alt="The same scan divided into short column chunks, with one highlighted in red"></a><figcaption><b>02 / Read smaller chunks</b><span>Keep small print legible to the model.</span></figcaption></figure>
-<figure><div class="alignment"><img src="{url('assets/figures/chunk.jpg')}" width="480" height="1500" loading="lazy" alt="Actual image crop sent to GLM"><div><span class="alignment-arrow" aria-hidden="true">→</span><p>{e(figure['excerpt'][:280])}…</p></div></div><figcaption><b>03 / Keep the source link</b><span>OCR text points back to its crop—not individual words.</span></figcaption></figure></div>
-<p class="fine-print">Real extraction example; boundaries are machine proposals. <a href="{url('scans/'+figure['page_id']+'/')}">Read this scan ↗</a></p></section>
+{story}
+<p class="fine-print">Illustrated workflow. Text is linked to source crops, not verified word coordinates. <a href="{url('about/#extraction')}">See real crop overlays ↗</a></p></section>
 <section class="front-notes"><div><h2>Read the source</h2><p>The AME Church’s newspaper, machine-transcribed for discovery. Every result links to its original scan.</p><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s source catalog ↗</a></div>
 <div><h2>Browse the volumes</h2><p>Explore by year or source bundle. Scan numbers follow the archive, not printed pagination.</p><a href="{url('volumes/')}">All 44 volumes →</a></div>
 <div><h2>A working edition</h2><p>{catalog['flagged_scans']:,} scans have output flags. Check the image before quoting.</p><a href="{url('about/')}">The experiments →</a></div></section>'''
     write('index.html', shell('Search the archive', home, search=True))
-    about = (ROOT / 'content/about.html').read_text()
+    about = (SRC / 'content/about.html').read_text()
     about = about.replace('<!-- extraction-figures -->', f'<div class="process-grid"><figure><img src="{url("assets/figures/columns.svg")}" alt="Column proposals and masthead cutoff"><figcaption>Detected columns · green gutters, blue masthead.</figcaption></figure><figure><img src="{url("assets/figures/chunks.svg")}" alt="Source-mapped OCR chunk polygons"><figcaption>Short chunks · the model receives one crop at a time.</figcaption></figure></div><p><a href="{url("assets/figures/provenance.json")}">Figure provenance and saved crop polygon</a> · <a href="{url("scans/"+figure["page_id"]+"/")}">Example transcription and original scan</a></p>')
     write('about/index.html', shell('Methods, findings and limitations', about))
     write('.nojekyll', '')

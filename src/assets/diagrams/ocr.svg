@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160" role="img" aria-labelledby="title desc">
+  <title id="title">04 — Read four chunks in parallel</title>
+  <desc id="desc">Four image requests feed the GLM GPU together. CUDA graphs replay decoding operations, producing text.</desc>
+  <g fill="#fffdf6" stroke="#7c3024" stroke-width="1.5"><rect x="14" y="16" width="33" height="23"/><rect x="14" y="49" width="33" height="23"/><rect x="14" y="82" width="33" height="23"/><rect x="14" y="115" width="33" height="23"/></g>
+  <g stroke="#8b8170"><path d="M20 23h20m-20 6h16M20 56h20m-20 6h16M20 89h20m-20 6h16M20 122h20m-20 6h16"/></g>
+  <path d="M47 28h15v47h22M47 60h22v15M47 94h22V81h15M47 127h15V81" fill="none" stroke="#7c3024" stroke-width="1.5"/>
+  <rect x="84" y="39" width="71" height="77" fill="#24211b"/>
+  <g stroke="#24211b" stroke-width="3"><path d="M96 32v7m16-7v7m16-7v7m16-7v7M96 116v7m16-7v7m16-7v7m16-7v7"/></g>
+  <text x="119" y="68" fill="#fffdf6" font-family="Georgia,serif" font-size="19" text-anchor="middle">GLM</text>
+  <path d="M102 87a18 13 0 1 0 25-7m-1-5 2 7-7 1" fill="none" stroke="#d3b68c" stroke-width="2"/>
+  <path d="M155 77h18m-6-5 6 5-6 5" fill="none" stroke="#24211b" stroke-width="1.5"/>
+  <rect x="178" y="44" width="48" height="65" fill="#fffdf6" stroke="#24211b"/>
+  <path d="M185 57h33m-33 9h28m-28 9h33m-33 9h25m-25 9h29" stroke="#376452" stroke-width="2"/>
+  <text x="120" y="149" font-family="Georgia,serif" font-size="11" text-anchor="middle" fill="#5d574b">image requests → text</text>
+</svg>

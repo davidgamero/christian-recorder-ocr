@@ -6,6 +6,8 @@
 
 2,376 scans, 44 volumes, 21.1 million word tokens. 121.4 mb of extracted text from *the christian recorder*, the african methodist episcopal church's newspaper. searchable on github pages, with links back to the scans.
 
+search links keep your query in `?q=…`. open a result to highlight exact matches and jump between them. quoted phrases stay together; word variants found by search may not have exact highlights.
+
 ## results table
 
 same chunked inputs, two checked excerpts. lower error is better.
@@ -78,9 +80,9 @@ python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-a
 python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 ```
 
-`corpus/` holds compressed, checksummed text snapshots. `scripts/` exports and builds them; `assets/` styles the site; `.github/workflows/pages.yml` publishes it. builds don't contact archive or run a model. private reviewer data, credentials and machine paths aren't exported.
+`src/assets/` holds styles, scripts and svg diagrams; `src/content/` holds page copy. `corpus/` stores checksummed text snapshots, `scripts/` builds them, and `.github/workflows/pages.yml` publishes the site. builds don't contact archive or run a model. private reviewer data, credentials and machine paths aren't exported.
 
-the front-page stats compare all 2,376 matched scans: **19% more lexical word tokens**, **55% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**. the baseline is archive ocr, not verified pdf-embedded text. these measure coverage, not correctness. visual examples show real column/chunk geometry and crop-level text links; they don't claim word-level alignment.
+the front-page stats compare all 2,376 matched scans: **19% more lexical word tokens**, **55% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**. the baseline is archive ocr, not verified pdf-embedded text. these measure coverage, not correctness. five small svg diagrams tell the story: scan → layout → chunks → parallel ocr → search. real crop overlays live on the project page; neither view claims word-level alignment.
 
 ## use it as a finding aid
 
