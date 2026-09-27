@@ -1,0 +1,12 @@
+{
+  "name": "christian-recorder-ocr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Source-linked Christian Recorder OCR archive with static full-text search",
+  "scripts": {
+    "build": "python3 scripts/build.py && pagefind --site _site && python3 scripts/check_site.py",
+    "test": "python3 -m unittest discover -s tests -v",
+    "serve": "python3 -m http.server 8080 --directory _site"
+  },
+  "devDependencies": {"pagefind": "1.5.2"}
+}
