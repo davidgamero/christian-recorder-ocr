@@ -8,6 +8,8 @@
 
 search links keep your query in `?q=…`. open a result to highlight exact matches and jump between them. quoted phrases stay together; word variants found by search may not have exact highlights.
 
+the sticky reading bar opens the archived original. paragraph labels show progress through extracted text and the saved crop's leaf/column—not physical page percentage or verified word coordinates. filters start collapsed on mobile; volumes are grouped by year.
+
 ## results table
 
 same chunked inputs, two checked excerpts. lower error is better.
@@ -75,12 +77,15 @@ refresh from the recorder research workspace:
 
 ```sh
 python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data
+python3 scripts/export_positions.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v4-20260925/report.json
 # optional: regenerate source-derived teaching figures (requires pillow)
 python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 ```
 
 `src/assets/` holds styles, scripts and svg diagrams; `src/content/` holds page copy. `corpus/` stores checksummed text snapshots, `scripts/` builds them, and `.github/workflows/pages.yml` publishes the site. builds don't contact archive or run a model. private reviewer data, credentials and machine paths aren't exported.
+
+optional browser checks (playwright + chromium): `python3 tests/browser_smoke.py` and `python3 tests/mobile_audit.py`. the mobile audit covers 40 views at 320/390/430/768px: search, filters, reading controls, original ocr, source details, volume browsing, project and 404. checks include overflow, primary touch targets and highlighted text staying below the sticky bar.
 
 the front-page stats compare all 2,376 matched scans: **19% more lexical word tokens**, **55% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**. the baseline is archive ocr, not verified pdf-embedded text. these measure coverage, not correctness. five small svg diagrams tell the story: scan → layout → chunks → parallel ocr → search. real crop overlays live on the project page; neither view claims word-level alignment.
 

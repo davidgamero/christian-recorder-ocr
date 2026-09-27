@@ -7,6 +7,8 @@ document.querySelectorAll('.load-original').forEach(button=>button.addEventListe
 }));
 
 const queryFromURL=()=>new URL(location.href).searchParams.get('q')||'';
+const filtersPanel=document.getElementById('search-filters');
+if(filtersPanel)filtersPanel.open=!window.matchMedia('(max-width: 700px)').matches;
 const withQuery=(href,query)=>{
   const url=new URL(href,location.href);
   if(query)url.searchParams.set('q',query);else url.searchParams.delete('q');
@@ -20,6 +22,9 @@ function initSearch(){
   if(!manager)return;
   const instance=manager.getInstance('default');
   let query=queryFromURL();
+  const intro=document.getElementById('project-intro');
+  let searching=Boolean(query.trim());
+  if(intro)intro.open=!searching;
   const results=document.querySelector('pagefind-results');
   function decorateResults(){
     results.querySelectorAll('.search-result h3 a').forEach(a=>{
@@ -30,6 +35,9 @@ function initSearch(){
   new MutationObserver(decorateResults).observe(results,{childList:true,subtree:true});
   instance.on('search',term=>{
     query=term||'';
+    const nextSearching=Boolean(query.trim());
+    if(intro&&nextSearching!==searching)intro.open=!nextSearching;
+    searching=nextSearching;
     const url=withQuery(location.href,query);
     if(url.href!==location.href)history.replaceState(null,'',url);
     decorateResults();
@@ -49,11 +57,13 @@ function highlightDocument(){
   const text=document.querySelector('.transcription');
   const bar=document.getElementById('match-navigation');
   if(!text||!bar)return;
-  const original=text.textContent;
+  const blocks=[...text.querySelectorAll('.paragraph-text')];
+  if(!blocks.length)blocks.push(text);
+  const originals=blocks.map(block=>block.textContent);
   function update(){
     const query=queryFromURL();
-    text.textContent=original;
-    bar.hidden=!query;
+    blocks.forEach((block,i)=>{block.textContent=originals[i];});
+    bar.querySelector('.query-tools').hidden=!query;
     if(!query)return;
     document.getElementById('match-query').textContent=query;
     const back=document.getElementById('back-to-search');
@@ -75,16 +85,18 @@ function highlightDocument(){
     const marks=[];
     if(alternatives.length){
       const pattern=new RegExp('(?<![\\p{L}\\p{N}])(?:'+alternatives.join('|')+')(?![\\p{L}\\p{N}])','giu');
-      const fragment=document.createDocumentFragment();
-      let offset=0;
-      for(const match of original.matchAll(pattern)){
-        fragment.append(document.createTextNode(original.slice(offset,match.index)));
-        const mark=document.createElement('mark');
-        mark.className='query-match';mark.textContent=match[0];mark.tabIndex=-1;
-        fragment.append(mark);marks.push(mark);offset=match.index+match[0].length;
-      }
-      fragment.append(document.createTextNode(original.slice(offset)));
-      text.replaceChildren(fragment);
+      blocks.forEach((block,i)=>{
+        const original=originals[i],fragment=document.createDocumentFragment();
+        let offset=0;
+        for(const match of original.matchAll(pattern)){
+          fragment.append(document.createTextNode(original.slice(offset,match.index)));
+          const mark=document.createElement('mark');
+          mark.className='query-match';mark.textContent=match[0];mark.tabIndex=-1;
+          fragment.append(mark);marks.push(mark);offset=match.index+match[0].length;
+        }
+        fragment.append(document.createTextNode(original.slice(offset)));
+        block.replaceChildren(fragment);
+      });
     }
     let current=-1;
     const count=document.getElementById('match-count');

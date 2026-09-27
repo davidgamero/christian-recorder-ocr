@@ -1,16 +1,13 @@
-<h1>A clearer window into the archive</h1>
-<p>The Christian Recorder, published by the African Methodist Episcopal Church, machine-transcribed for search. <a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s serial catalog</a> led us to 44 volumes at Internet Archive. This is an independent research edition.</p>
-<h2 id="comparison">What the numbers mean</h2>
-<p>We compare GLM output with Archive’s existing OCR on the same 2,376 scans. Word counts use normalized lexical tokens; dictionary matches use a pinned wiki100k word list. These differ from the 21.1 million whitespace-separated tokens in the raw output.</p>
-<p><strong>More words does not prove more correct text.</strong> Dictionary checks miss plausible substitutions and invented prose; names and historical spellings may fail them. Repetition, missing passages and reading-order errors remain. The original baseline is a page-mapped Archive OCR derivative—not verified PDF-embedded text.</p>
-<h2>How we got here</h2>
-<section id="extraction"><h3>Columns → chunks → source-linked text</h3><p>These figures show saved geometry from a real extraction. The blue line separates the masthead; green lines follow column gutters. Each smaller crop retains a polygon in the original scan. GLM’s text is linked to that crop, not aligned to individual words. Proposed boundaries can still cut through text.</p><!-- extraction-figures --></section>
-<ol><li><strong>Tesseract baseline.</strong> Learned column templates, curved gutters and overlapping strips.</li>
-<li><strong>Vision comparison.</strong> Tested DeepSeek, GLM and Paddle on identical inputs. Whole pages repeated; short column chunks worked better. GLM matched DeepSeek’s small pilot excerpt score: 0.52% character error.</li>
-<li><strong>Spread correction.</strong> Stopped a flawed landscape run. Added separate leaves, printed-rule gutters and sloped mastheads.</li>
-<li><strong>Faster extraction.</strong> Four concurrent requests, next-page preparation and decode CUDA graphs. Graphs delivered 3.43× the eager-mode benchmark throughput.</li>
-<li><strong>Static publication.</strong> All 2,376 scans processed; 435 have output flags. Pagefind searches GLM text in your browser. Original OCR loads only when requested.</li></ol>
-<p>Pilot scores cover two provisional, previously inspected excerpts—not full-page accuracy. <a href="https://github.com/davidgamero/christian-recorder-ocr#results-table">Full results & build instructions ↗</a></p>
-<h2>Read alongside the scan</h2>
-<p>Every result links to its original. Scan positions include cards and two-page spreads, not printed pagination. Year labels come from source metadata. Check images before quoting; report corrections with the scan ID and passage location.</p>
-<p><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Original source catalog ↗</a> · <a href="https://github.com/davidgamero/christian-recorder-ocr/issues">Report a problem ↗</a></p>
+<h1>Evidence & limits</h1>
+<p>2,376 scans from 44 volumes of the AME Church’s newspaper. <a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s catalog</a> identifies the archived originals. This is an independent, uncorrected research edition.</p>
+<h2 id="comparison">Reading the numbers</h2>
+<p>Homepage statistics compare GLM with Archive’s existing OCR on the same scans. Counts use normalized word tokens and a pinned wiki100k list. Dictionary matches measure recognizable forms—not accuracy or recovered-page completeness.</p>
+<p>Names can fail the dictionary; invented prose can pass it. Repetition, omissions and reading-order errors remain. Archive OCR is a page-mapped derivative, not verified PDF-embedded text. <a href="../comparison.json">Download the measured comparison</a>.</p>
+<section id="extraction"><h2>Actual crop geometry</h2><p>Green: column proposals. Blue: masthead cutoff. Red: OCR chunks. Each chunk retains its source polygon; individual words are not coordinate-aligned. These are saved proposals, not verified boundaries.</p><!-- extraction-figures --></section>
+<h2>What the experiments established</h2>
+<ul><li><strong>Chunks beat whole pages.</strong> GLM and DeepSeek both reached 0.52% character error on two checked pilot excerpts; Paddle reached 0.78%, fixed-chunk Tesseract 5.88%.</li>
+<li><strong>Layout matters.</strong> A failed landscape run led to separate leaves, printed-rule gutters and sloped mastheads.</li>
+<li><strong>Graphs improved throughput.</strong> Four-request decode CUDA graphs were 3.43× faster than four-request eager execution on the same test workload.</li></ul>
+<p>Those references were provisional and previously inspected. They do not establish corpus-wide accuracy. Of the completed scans, 435 have output flags; others may still contain errors. <a href="https://github.com/davidgamero/christian-recorder-ocr#results-table">Results, runtime & build details ↗</a></p>
+<h2>Verify a passage</h2>
+<p>Follow its original-scan link before quoting. Scan numbers include cards and spreads, not printed pagination. Year labels come from source metadata. <a href="https://github.com/davidgamero/christian-recorder-ocr/issues">Report corrections</a> with the scan ID and passage location.</p>

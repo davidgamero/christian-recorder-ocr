@@ -43,9 +43,16 @@ def main():
             assert '+55%' in page.locator('.stat-columns').inner_text()
             assert page.locator('.pipeline-story figure').count() == 5
             assert page.locator('#stats-title').inner_text() == 'What is this?'
+            assert page.locator('#search-filters').evaluate('(el)=>el.open')
             assert all('/assets/diagrams/' in src for src in page.locator('.pipeline-story img').evaluate_all('(imgs)=>imgs.map(i=>i.src)'))
             page.screenshot(path='/tmp/recorder-home-desktop.png', full_page=True)
             page.set_viewport_size({'width': 390, 'height': 844})
+            page.reload()
+            page.locator('pagefind-input input').wait_for()
+            assert not page.locator('#search-filters').evaluate('(el)=>el.open')
+            page.locator('#search-filters summary').click()
+            assert page.locator('#search-filters').evaluate('(el)=>el.open')
+            page.locator('#search-filters summary').click()
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
             assert page.locator('pagefind-input input').bounding_box()['y'] < 350
             page.screenshot(path='/tmp/recorder-home-mobile.png', full_page=True)
@@ -54,6 +61,7 @@ def main():
             page.locator('pagefind-input input').fill('Wilberforce')
             page.locator('pagefind-results').scroll_into_view_if_needed()
             page.locator('.search-result').first.wait_for(timeout=60000)
+            assert not page.locator('#project-intro').evaluate('(el)=>el.open')
             print(f'First search result in {time.monotonic()-start:.2f}s')
             link = page.locator('.search-result h3 a').first
             href = link.get_attribute('href')
@@ -73,6 +81,9 @@ def main():
             assert result['phrase'] > 0 and result['filtered'] > 0 and '1868' in result['year'], result
             page.goto(base.rstrip('/') + href[len(PREFIX):] if href.startswith(PREFIX) else href)
             page.locator('.transcription').wait_for()
+            assert page.locator('.paragraph-position').count() > 0
+            assert 'through text' in page.locator('.paragraph-position').first.inner_text()
+            assert page.locator('.sticky-original').get_attribute('href').startswith('https://archive.org/details/')
             page.locator('.query-match').first.wait_for()
             assert page.locator('#match-count').inner_text().startswith('1 of ')
             if page.locator('.query-match').count() > 1:
@@ -84,6 +95,8 @@ def main():
             page.locator('.query-match').first.wait_for()
             assert page.locator('.current-match').count() == 1
             assert not any(r.endswith('/original.txt') for r in requests)
+            assert page.locator('.reading-toolbar .actions a').count() == 2
+            page.locator('.original-comparison summary').click()
             page.locator('.load-original').click()
             page.wait_for_function("document.querySelector('.load-original').textContent.includes('loaded')")
             assert page.locator('.original-text').inner_text().strip()
@@ -101,6 +114,17 @@ def main():
             page.goto(page.url.split('?')[0] + '?q=zzzzunmatchabletoken')
             assert page.locator('#match-count').inner_text() == '0 matches'
             assert page.locator('#match-next').is_disabled()
+            page.goto(page.url.split('?')[0])
+            assert page.locator('#match-navigation').is_visible()
+            assert page.locator('.sticky-original').is_visible()
+            assert not page.locator('.query-tools').is_visible()
+            page.goto(base + 'volumes/')
+            assert page.locator('.year-group h2').first.inner_text() == '1854–1855'
+            assert page.locator('.year-group h2').last.inner_text() == 'Undated volume'
+            assert page.locator('.volume-list a').count() == 44
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+            page.locator('.volume-list a').first.click()
+            assert 'No output flags' not in page.locator('.scan-list').inner_text()
             browser.close()
             print('PASS: search query URLs, highlights/next/previous, reload, phrases, filters, source links, lazy text, mobile')
     finally:
