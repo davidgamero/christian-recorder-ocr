@@ -1,0 +1,2923 @@
+{
+  "schema": 1,
+  "run": "glm-full-archive-v4-20260925",
+  "audited_chunks": 60065,
+  "high_candidate_chunks": 434,
+  "high_candidate_scans": 377,
+  "repeated_phrase_pct": 3.4714126710687525,
+  "targeted_repair_chunks": 442,
+  "repair_status": "Queued; waiting for a successful engine benchmark and restored GPU workload. Published text is not yet replaced.",
+  "pages": {
+    "christianrecorder_1863_v3_no14_to_26-p009": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "confirmed_model_loop",
+        "repeated_pct": 99.92,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p088": {
+      "leaf-1-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.92,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.42,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p190": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "confirmed_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.58,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p018": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.84,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p028": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p097": {
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p003": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p057": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p104": {
+      "leaf-0-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.93,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p016": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.84,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.29,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p171": {
+      "leaf-1-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.84,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p108": {
+      "leaf-1-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.76,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p090": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p056": {
+      "leaf-0-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p017": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p015": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.64,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.23,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p031": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.32,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p023": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.36,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p136": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p023": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p003": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p011": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p012": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p019": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.48,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p003": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p050": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p045": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.47,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 58.36,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p007": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.47,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p022": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p042": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p003": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p007": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p045": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p030": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p023": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p047": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p026": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.69,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p030": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p034": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p038": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p004": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p031": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p006": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.43,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p030": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.15,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.91,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p027": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.39,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p035": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.15,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p002": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p011": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.39,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.06,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p022": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p039": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p008": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p004": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p021": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p049": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.98,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p044": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.93,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p068": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.76,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.32,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1856-p004": {
+      "leaf-1-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no431_to_445-p029": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.24,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1854_1855-p004": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.84,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p039": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.36,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.8,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.67,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p015": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.51,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p017": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.51,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p021": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p020": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.51,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p014": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.19,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p049": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p004": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.58,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p116": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.53,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p090": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p041": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.61,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p013": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p067": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p023": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p110": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p050": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p091": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p027": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.88,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 89.76,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p045": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.64,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.76,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p003": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.81,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p008": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.9,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.64,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p027": {
+      "leaf-0-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.66,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p013": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.94,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p017": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.93,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p027": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.29,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.62,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p011": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.87,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.12,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p046": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.71,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no8_to_15-p031": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no8_to_15-p024": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p018": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.73,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p019": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.0,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no27_to_39-p003": {
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.64,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p006": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no1_to_6-p018": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.56,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p003": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.7,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.56,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p014": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p029": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.4,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p047": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1854_1855-p011": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.02,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p033": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.56,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p031": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p015": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.49,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p035": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.5,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.11,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p010": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.85,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 69.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p022": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.19,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p011": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.26,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p018": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.1,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p006": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.07,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p038": {
+      "leaf-1-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p011": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.11,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.9,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p087": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.77,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p038": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.11,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p049": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p015": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.12,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p045": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p003": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.77,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p010": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.34,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p007": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p020": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p052": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.82,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p028": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.52,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p043": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p004": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.67,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no14_to_26-p030": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.61,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no_39_to_51-p052": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.96,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p022": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.57,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p022": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.47,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p033": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.46,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p041": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.46,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p034": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.45,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p008": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p020": {
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.49,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p013": {
+      "leaf-1-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.49,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p033": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.98,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p043": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p010": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.57,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p026": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.16,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p007": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.08,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p060": {
+      "leaf-1-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.69,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p007": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.76,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p033": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p088": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.98,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p007": {
+      "leaf-1-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p031": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.04,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p016": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.03,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p036": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.73,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p029": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.1,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p077": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p029": {
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 89.22,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no1_to_6-p010": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.49,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p020": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p012": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 89.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p018": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.24,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p013": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.23,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p023": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.24,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.08,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p080": {
+      "leaf-1-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.66,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p026": {
+      "leaf-1-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p015": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p080": {
+      "leaf-0-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no1_to_13-p043": {
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.38,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.91,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no40_to_52-p004": {
+      "leaf-0-chunk-0-0-8": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.93,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-7": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.42,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p096": {
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.1,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.15,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p050": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.11,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.6,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p011": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.94,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p026": {
+      "leaf-1-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no1_to_13-p043": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.82,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p003": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p041": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.1,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p037": {
+      "leaf-1-chunk-4-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.1,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p047": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p049": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.06,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p008": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.12,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p053": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p101": {
+      "leaf-1-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.22,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 67.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p008": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p028": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.06,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p012": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p033": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.07,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p035": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.39,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no8_to_15-p005": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.57,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-6": {
+        "status": "possible_model_loop",
+        "repeated_pct": 89.71,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no29_to_39-p033": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.92,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p090": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.96,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p017": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.87,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.09,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p069": {
+      "leaf-1-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.88,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.78,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.73,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no14_to_26-p042": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.11,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p015": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.87,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p048": {
+      "leaf-1-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.66,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p008": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.87,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p095": {
+      "leaf-1-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.2,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p015": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no40_to_52-p032": {
+      "leaf-0-chunk-2-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.58,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p023": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.23,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no14_to_26-p006": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.34,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p026": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.96,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no26_to_39-p017": {
+      "leaf-0-chunk-3-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.35,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p105": {
+      "leaf-1-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.83,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no_39_to_51-p025": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.79,
+        "finish_reason": "length"
+      },
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.03,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p044": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.46,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p051": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.04,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p034": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.79,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p054": {
+      "leaf-1-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p016": {
+      "leaf-0-chunk-0-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.46,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p046": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p048": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p048": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.58,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p017": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.67,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p050": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p062": {
+      "leaf-1-chunk-2-0-7": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.38,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p040": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.0,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p018": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.36,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no29_to_39-p018": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.61,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p023": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p039": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p048": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.02,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no40_to_52-p020": {
+      "leaf-0-chunk-1-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.99,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p041": {
+      "leaf-0-chunk-3-0-8": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.79,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p117": {
+      "leaf-1-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.67,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no418_to_430-p003": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.85,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p032": {
+      "leaf-0-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p106": {
+      "leaf-0-chunk-0-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.81,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.48,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p012": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.05,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p048": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p033": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.45,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.84,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no40_to_52-p026": {
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.21,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p005": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p010": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no418_to_430-p033": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no431_to_445-p001": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p091": {
+      "leaf-1-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no1_to_13-p009": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 89.64,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p024": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p017": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p024": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.57,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p040": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.67,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no40_to_52-p033": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.18,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no14_26-p031": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.42,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p004": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.73,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p028": {
+      "leaf-0-chunk-0-0-7": {
+        "status": "possible_model_loop",
+        "repeated_pct": 80.18,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.29,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p044": {
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p046": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.83,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p069": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p008": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.97,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p028": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.02,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p020": {
+      "leaf-0-chunk-3-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.38,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p035": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.92,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p022": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.68,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p032": {
+      "leaf-0-chunk-4-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p006": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p025": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 72.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no40_to_52-p003": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.46,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.59,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p008": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.86,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p021": {
+      "leaf-0-chunk-1-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p039": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p011": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.62,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no14_to_26-p008": {
+      "leaf-0-chunk-0-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p042": {
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.85,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p013": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 72.96,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.15,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p024": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.91,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p040": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 94.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no14_26-p051": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.58,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p030": {
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.92,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no1_to_13-p009": {
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no1_to_6-p004": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.34,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p004": {
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.83,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no1_to_13-p047": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.19,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p018": {
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.14,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_no1_to_13-p012": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.0,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p076": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 87.02,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 71.07,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p094": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.11,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.77,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p014": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.38,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p014": {
+      "leaf-1-chunk-4-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.08,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no40_to_52-p046": {
+      "leaf-0-chunk-0-0-5": {
+        "status": "confirmed_model_loop",
+        "repeated_pct": 75.57,
+        "finish_reason": "stop"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p009": {
+      "leaf-0-chunk-2-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 72.78,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p005": {
+      "leaf-0-chunk-4-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no_39_to_51-p020": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no1_to_6-p016": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.53,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no40_to_52-p037": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.08,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p036": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.02,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_no1_to_13-p016": {
+      "leaf-0-chunk-0-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.06,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no26_to_39-p025": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_91_to_104-p022": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no16_to_28-p044": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.16,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no27_to_39-p039": {
+      "leaf-0-chunk-0-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.78,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 67.07,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p007": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 67.16,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no40_to52-p045": {
+      "leaf-0-chunk-1-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no27_to_39-p019": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 72.79,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p010": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.51,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 57.61,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p014": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.11,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p009": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.79,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p023": {
+      "leaf-0-chunk-0-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.88,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p052": {
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.4,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no13_to_25-p016": {
+      "leaf-0-chunk-2-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.68,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no1_to_13-p028": {
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 71.18,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p034": {
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.41,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p026": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p051": {
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.09,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no_39_to_51-p028": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.82,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p017": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.78,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no431_to_445-p007": {
+      "leaf-0-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.92,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.72,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no460_to_473-p012": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.52,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p163": {
+      "leaf-1-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.44,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no447_to_459-p006": {
+      "leaf-1-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 99.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p075": {
+      "leaf-1-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.48,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no_39_to_51-p021": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.16,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p060": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.36,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1865_v5_no26_to_39-p008": {
+      "leaf-0-chunk-0-0-6": {
+        "status": "possible_model_loop",
+        "repeated_pct": 64.69,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p024": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p015": {
+      "leaf-1-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p012": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.0,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no27_to_39-p051": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.42,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p040": {
+      "leaf-0-chunk-1-0-4": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.13,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no_78_to_90-p030": {
+      "leaf-0-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.69,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no1_to_13-p041": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.16,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v_3_no1_to_13-p020": {
+      "leaf-0-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.96,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p105": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.82,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p081": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.09,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p086": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.02,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p067": {
+      "leaf-0-chunk-5-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p021": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 93.27,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p033": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.7,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 39.91,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p019": {
+      "leaf-0-chunk-1-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 66.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1864_v4_no14_to_26-p036": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.89,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p025": {
+      "leaf-0-chunk-3-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 71.83,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no27_to_39-p005": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 81.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p014": {
+      "leaf-0-chunk-2-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 84.49,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no29_to_39-p003": {
+      "leaf-0-chunk-1-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.71,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p037": {
+      "leaf-0-chunk-1-0-3": {
+        "status": "possible_model_loop",
+        "repeated_pct": 55.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no52_to_64-p022": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.01,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no460_to_473-p005": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.39,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no27_to_39-p025": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.11,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no14_to_26-p029": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.8,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p100": {
+      "leaf-0-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.51,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p011": {
+      "leaf-1-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.65,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p111": {
+      "leaf-1-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 79.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1863_v3_no27_to_39-p041": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.75,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p056": {
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 97.9,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1862_v2_no65_to_68-p038": {
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.98,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1870_no460_to_473-p017": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 95.45,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p061": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 70.07,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1867_v7_no40_to_52-p027": {
+      "leaf-0-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.93,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p008": {
+      "leaf-0-chunk-4-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 92.97,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1868_v8_no8_to_15-p002": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 78.15,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p110": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.76,
+        "finish_reason": "length"
+      },
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 83.76,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p044": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 85.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p004": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 63.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p027": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 90.26,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no13_to_25-p029": {
+      "leaf-0-chunk-2-0-4": {
+        "status": "confirmed_model_loop",
+        "repeated_pct": 65.67,
+        "finish_reason": "stop"
+      }
+    },
+    "christianrecordephil_4a2-p034": {
+      "leaf-1-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 51.56,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p070": {
+      "leaf-0-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 82.35,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4c-p060": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p049": {
+      "leaf-0-chunk-0-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 60.97,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no418_to_430-p007": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 98.33,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no40_to_52-p051": {
+      "leaf-0-chunk-1-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 71.79,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no418_to_430-p021": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 96.2,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p034": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 69.53,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p073": {
+      "leaf-1-chunk-6-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.83,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1869_v9_new_no418_to_430-p029": {
+      "leaf-0-chunk-6-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 88.9,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p083": {
+      "leaf-1-chunk-0-0-2": {
+        "status": "possible_model_loop",
+        "repeated_pct": 67.25,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no26_to_38-p047": {
+      "leaf-0-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 86.7,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p098": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 77.55,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p030": {
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 73.66,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p100": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 60.54,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p016": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 60.77,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1861_no1_to_12-p041": {
+      "leaf-0-chunk-3-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 63.69,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p112": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.95,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p032": {
+      "leaf-0-chunk-4-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 91.74,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p029": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 57.28,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b-p114": {
+      "leaf-0-chunk-2-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 76.5,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p083": {
+      "leaf-1-chunk-6-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 74.59,
+        "finish_reason": "length"
+      },
+      "leaf-1-chunk-5-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 75.9,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p006": {
+      "leaf-0-chunk-4-0-0": {
+        "status": "possible_model_loop",
+        "repeated_pct": 68.31,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p010": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 52.23,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p052": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 48.47,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4a2-p104": {
+      "leaf-0-chunk-5-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 63.24,
+        "finish_reason": "length"
+      },
+      "leaf-0-header": {
+        "status": "possible_model_loop",
+        "repeated_pct": 28.84,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecorder_1866_v6_no1_to_13-p051": {
+      "leaf-0-chunk-1-0-5": {
+        "status": "possible_model_loop",
+        "repeated_pct": 57.05,
+        "finish_reason": "stop"
+      }
+    },
+    "christianrecordephil_4b-p102": {
+      "leaf-0-chunk-2-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 33.03,
+        "finish_reason": "length"
+      }
+    },
+    "christianrecordephil_4b2-p020": {
+      "leaf-0-chunk-3-0-1": {
+        "status": "possible_model_loop",
+        "repeated_pct": 35.06,
+        "finish_reason": "length"
+      }
+    }
+  },
+  "note": "Automated candidates, not blanket deletion rules; source-confirmed repeated poems/ads excluded from page labels."
+}

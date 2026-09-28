@@ -39,7 +39,7 @@ def shell(title, body, *, search=False):
 <main id="main">{body}</main><footer>Machine-transcribed. Check the scan before quoting. <a href="{url('about/')}">Methods</a> · <a href="https://github.com/davidgamero/christian-recorder-ocr">GitHub</a></footer></body></html>'''
 
 
-def transcription(text, position=None):
+def transcription(text, position=None, loop_tasks=None):
     # OCR is untrusted text, never Markdown/HTML. Keep line breaks verbatim.
     if position is None:
         return '<div class="transcription">' + e(text) + '</div>'
@@ -55,7 +55,9 @@ def transcription(text, position=None):
             leaf = f"Leaf {int(span['leaf'].split('-')[-1])+1} · " if span.get('leaf') and span['leaf_count'] > 1 else ''
             location = 'Masthead' if span['kind'] == 'header' else 'Sparse region' if span['kind'] == 'sparse' else f"Column {span['column']+1}" if span['column'] is not None else 'Source crop'
             label = f'{progress}% through text · {leaf}{location}'
-            parts.append(f'<div class="ocr-paragraph" id="p{n}"><a class="paragraph-position" data-pagefind-ignore href="#p{n}" title="Position in extracted text; column from saved crop geometry">{e(label)}</a><div class="paragraph-text">{e(paragraph[0])}</div></div>')
+            loop = (loop_tasks or {}).get(span.get('task'))
+            warning = '<span class="loop-warning" data-pagefind-ignore>Possible model loop · check the original</span>' if loop else ''
+            parts.append(f'<div class="ocr-paragraph" id="p{n}"><a class="paragraph-position" data-pagefind-ignore href="#p{n}" title="Position in extracted text; column from saved crop geometry">{e(label)}</a>{warning}<div class="paragraph-text">{e(paragraph[0])}</div></div>')
     return '<div class="transcription">' + '\n\n'.join(parts) + '</div>'
 
 
@@ -87,6 +89,7 @@ def main():
     shutil.copytree(SRC / "assets", OUT / "assets")
     catalog = json.loads((ROOT / "corpus/catalog.json").read_text())
     comparison = json.loads((ROOT / 'corpus/comparison.json').read_text())
+    loop_audit = json.loads((ROOT / 'corpus/loop-audit.json').read_text())
     positions = json.loads(gzip.decompress((ROOT / 'corpus/positions.json.gz').read_bytes()))
     if comparison['paired_scans'] != catalog['scans'] or comparison['run'] != catalog['run']:
         raise ValueError('Comparison statistics do not match the published corpus')
@@ -104,6 +107,7 @@ def main():
         for i, page in enumerate(volume["pages"]):
             identity = page["id"]
             quality = "Flagged output" if page["flags"] or page["errors"] else "No output flags"
+            loop_tasks = loop_audit['pages'].get(identity, {})
             viewer, member = source_links(volume, page)
             title = f'{year} · {short_label} · Scan {page["number"]}'
             flag_badge = '<span class="flag-badge">Flagged</span>' if page['flags'] or page['errors'] else ''
@@ -131,6 +135,7 @@ def main():
 <p class="actions"><a href="{e(member)}">Original JP2 ↗</a><a href="{e(volume['archive_url'])}">Archived volume ↗</a><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn catalog ↗</a><a href="provenance.json">Provenance JSON</a></p>
 <dl class="facts"><dt>Volume</dt><dd data-pagefind-filter="Volume">{e(sid)}</dd><dt>Year</dt><dd data-pagefind-filter="Year">{e(year)}</dd>
 <dt>Status</dt><dd data-pagefind-filter="Quality">{quality}</dd><dt>Dimensions</dt><dd>{page['width']} × {page['height']}</dd></dl>
+<p data-pagefind-filter="Loop audit">{'Possible model loop' if loop_tasks else 'No high-loop candidate'}</p>
 <p>Scan positions include cards and two-page spreads—not printed page numbers.</p>
 <p>Original member: <code>{e(page['source_page'])}</code></p><p>Output flags: {e(flags)}</p><p>Layout flags: {e(', '.join(page['layout_flags']) or 'none')}</p>
 <p>Source SHA-256: <code>{page['image_sha256']}</code></p></details>
@@ -141,7 +146,7 @@ def main():
 <span>Find: <strong id="match-query"></strong></span><span id="match-count" role="status" aria-live="polite"></span>
 <button id="match-prev" type="button">← Previous</button><button id="match-next" type="button">Jump to next →</button>
 <a id="back-to-search" href="{url('#search')}">Back to results</a><span id="match-note"></span></span></aside>
-<article data-pagefind-body><h2 id="transcription" class="reading-label">GLM transcription</h2>{transcription(page['text'], positions[identity])}</article>
+<article data-pagefind-body><h2 id="transcription" class="reading-label">GLM transcription</h2>{transcription(page['text'], positions[identity], loop_tasks)}</article>
 <nav class="bottom-pagination" aria-label="Continue reading">{navigation}</nav>'''
             write(f'scans/{identity}/index.html', shell(title, body))
         count_flagged = sum(bool(p['flags'] or p['errors']) for p in volume['pages'])
@@ -167,7 +172,7 @@ def main():
 <pagefind-config bundle-path="{url('pagefind/')}" base-url="{BASE}" excerpt-length="35"></pagefind-config>
 <pagefind-input placeholder="Search a name, place, or phrase…"></pagefind-input>
 <p class="search-hint">{catalog['scans']:,} scans · {len(catalog['sources'])} volumes · Use “quotes” for phrases.</p>
-<details id="search-filters" class="search-filters"><summary>Filters <span>Year, quality & volume</span></summary><div class="filters"><pagefind-filter-dropdown filter="Year" label="Year"></pagefind-filter-dropdown><pagefind-filter-dropdown filter="Quality" label="Quality flags"></pagefind-filter-dropdown><pagefind-filter-dropdown filter="Volume" label="Volume"></pagefind-filter-dropdown></div></details>
+<details id="search-filters" class="search-filters"><summary>Filters <span>Year, quality & volume</span></summary><div class="filters"><pagefind-filter-dropdown filter="Year" label="Year"></pagefind-filter-dropdown><pagefind-filter-dropdown filter="Quality" label="Quality flags"></pagefind-filter-dropdown><pagefind-filter-dropdown filter="Loop audit" label="Model loops"></pagefind-filter-dropdown><pagefind-filter-dropdown filter="Volume" label="Volume"></pagefind-filter-dropdown></div></details>
 <pagefind-summary></pagefind-summary><pagefind-results hide-sub-results>
 <script type="text/pagefind-template"><li class="search-result"><h3><a href="{{{{ url | safeUrl }}}}">{{{{ meta.title }}}}</a></h3><p>{{{{+ excerpt +}}}}</p><p class="result-sources"><a href="{{{{ meta.archive_scan | safeUrl }}}}">Original scan ↗</a> · <a href="{{{{ meta.archive_volume | safeUrl }}}}">Archived volume ↗</a></p></li></script>
 </pagefind-results>
@@ -178,6 +183,7 @@ def main():
 <div><strong>+{comparison['recognized_word_increase_pct']:.0f}%</strong><h3>More recognized words</h3><p>{original_stats['recognized_words']/1e6:.1f}m → {glm_stats['recognized_words']/1e6:.1f}m dictionary matches</p></div>
 <div><strong>{original_stats['unrecognized_pct']:.1f}% → {glm_stats['unrecognized_pct']:.1f}%</strong><h3>Fewer unrecognized forms</h3><p>Share absent from the word list</p></div></div>
 <p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p>
+<p class="fine-print">Loop checks now flag suspect passages; targeted smaller-crop repairs are queued. <a href="{url('about/#loop-repair')}">Repair status ↗</a></p>
 {story}
 <p class="fine-print">Illustrated workflow; crop links, not verified word coordinates. {catalog['flagged_scans']:,} scans have output flags. <a href="{url('about/#extraction')}">Real crop overlays ↗</a></p></div></details>'''
     write('index.html', shell('Search the archive', home, search=True))
@@ -188,6 +194,7 @@ def main():
     write('404.html', shell('Page not found', f'<h1>Page not found</h1><p><a href="{url()}">Search or browse the archive.</a></p>'))
     write('catalog.json', json.dumps(catalog, indent=2, ensure_ascii=False))
     write('comparison.json', json.dumps(comparison, indent=2))
+    write('loop-audit.json', json.dumps(loop_audit, indent=2))
     print(f"Generated {catalog['scans']} scans, {len(catalog['sources'])} volumes at {BASE}")
 
 

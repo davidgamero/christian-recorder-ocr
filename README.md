@@ -33,6 +33,8 @@ final run: **all 2,376 scans processed**, zero failed pages, **435 scans with ou
 
 ## how we got here
 
+**loop repair update:** a full audit found 434 high-loop candidates among 60,065 chunks. source-confirmed repeated poems/ads are preserved. the site now labels suspect passages and adds a model-loop filter. **442 targeted repairs are queued**, waiting for a successful sglang/vllm benchmark and gpu restoration. published text is not replaced yet. the repair worker checks crop geometry, splits into smaller pieces, cancels strong streaming loops and stops after two retry rounds, keeping every attempt and source coordinate.
+
 **1. start with tesseract.** learned a column template, aligned curved gutters, and tried overlapping strips. kept source coordinates so every reading could be checked against the image.
 
 **2. try vision models.** compared whole pages, columns, chunks and reference crops. whole-page inputs lost tiny text and generated repetition. short column chunks plus a separate masthead worked best. glm matched deepseek's aggregate pilot score locally on a 24 gb rtx 3090.
@@ -78,6 +80,7 @@ refresh from the recorder research workspace:
 ```sh
 python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_positions.py --data /path/to/andrew-newspaper/data
+python3 scripts/export_loop_audit.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v4-20260925/report.json
 # optional: regenerate source-derived teaching figures (requires pillow)
 python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
