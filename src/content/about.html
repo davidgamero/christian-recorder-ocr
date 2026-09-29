@@ -1,14 +1,48 @@
-<h1>Evidence & limits</h1>
-<p>2,376 scans from 44 volumes of the AME Church’s newspaper. <a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s catalog</a> identifies the archived originals. This is an independent, uncorrected research edition.</p>
-<h2 id="comparison">Reading the numbers</h2>
-<p>Homepage statistics compare GLM with Archive’s existing OCR on the same scans. Counts use normalized word tokens and a pinned wiki100k list. Dictionary matches measure recognizable forms—not accuracy or recovered-page completeness.</p>
-<p>Names can fail the dictionary; invented prose can pass it. Repetition, omissions and reading-order errors remain. Archive OCR is a page-mapped derivative, not verified PDF-embedded text. <a href="../comparison.json">Download the measured comparison</a>.</p>
-<section id="extraction"><h2>Actual crop geometry</h2><p>Green: column proposals. Blue: masthead cutoff. Red: OCR chunks. These figures illustrate the original v4 preparation. Each chunk retains its source polygon; individual words are not coordinate-aligned. These are saved proposals, not verified boundaries.</p><!-- extraction-figures --></section>
-<h2>What the experiments established</h2>
-<ul><li><strong>Chunks beat whole pages.</strong> GLM and DeepSeek both reached 0.52% character error on two checked pilot excerpts; Paddle reached 0.78%, fixed-chunk Tesseract 5.88%.</li>
-<li><strong>Layout matters.</strong> A failed landscape run led to separate leaves, printed-rule gutters and sloped mastheads.</li>
-<li><strong>Graphs improved throughput.</strong> Four-request decode CUDA graphs were 3.43× faster than four-request eager execution on the same test workload.</li></ul>
-<p>Those references were provisional and previously inspected. They do not establish corpus-wide accuracy. The original v4 edition had 435 scans with output flags. The current count also includes unresolved rerun candidates; unflagged text may still contain errors. <a href="https://github.com/davidgamero/christian-recorder-ocr#results-table">Results, runtime & build details ↗</a></p>
-<h2>Verify a passage</h2>
-<section id="loop-repair"><h2>Targeted reprocessing</h2><p>The v4 audit found 434 high-loop candidates among 60,065 chunks. An initial smaller-crop repair removed many loops, but scan review found remaining clipped columns and omissions. Passing a loop check did not prove an accurate transcription.</p><p>The v5 pass reprocessed <strong>6,445 known-failure and multiple-warning chunks across 1,496 scans</strong>. It uses original scan pixels, tilted printed-rule cuts, crops up to 900 pixels high, and streaming loop cancellation. An early equal-width fallback was discarded after previewing a cut through text. Unresolved wide regions retain the prior text. Source footprints are preserved to avoid duplicating neighboring text; already-clipped outside edges can still need review.</p><!-- reprocessing-summary --><p>Only replacements that passed automatic output and text-volume checks were selected. Other candidates retain the prior text with an unresolved flag. Original artifacts and attempts remain preserved. Printed poems and repetitive ads are not blindly deduplicated. <a href="../loop-audit.json">Current repetition audit</a> · <a href="../catalog.json">Dataset provenance</a>.</p></section>
-<p>Follow its original-scan link before quoting. Scan numbers include cards and spreads, not printed pagination. Year labels come from source metadata. <a href="https://github.com/davidgamero/christian-recorder-ocr/issues">Report corrections</a> with the scan ID and passage location.</p>
+<div class="editorial-page">
+  <header class="page-intro">
+    <p class="eyebrow">About this edition</p>
+    <h1>An archive to search.<br>A source to return to.</h1>
+    <p class="standfirst">A searchable research edition of <em>The Christian Recorder</em>, the African Methodist Episcopal Church’s newspaper. Machine transcriptions, always linked to the original scan.</p>
+    <nav class="section-nav" aria-label="Project sections"><a href="#edition">The edition</a><a href="#extraction">The process</a><a href="#loop-repair">The repairs</a><a href="#comparison">The numbers</a></nav>
+  </header>
+  <section class="editorial-section" id="edition">
+    <div class="section-kicker"><span>01</span> The collection</div>
+    <div class="section-copy">
+      <h2>2,376 scans. 44 archived volumes.</h2>
+      <p><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Penn’s serial catalog</a> led us to the originals at Internet Archive. We extracted the small print into text you can search, browse and compare with the page.</p>
+      <p>Scan numbers include separator cards and two-page spreads; they are not printed newspaper page numbers. Year labels come from volume metadata, not verified issue dates.</p>
+      <aside class="editorial-note"><strong>Use it as a finding aid.</strong> Check the scan before quoting. Missing text, wrong names, repetition and plausible invented readings remain possible. This is an independent research edition, not an official Penn, Archive or AME publication.</aside>
+      <p class="download-links"><a href="../volumes/">Browse the volumes →</a><a href="https://github.com/davidgamero/christian-recorder-ocr/issues">Report a reading ↗</a></p>
+    </div>
+  </section>
+  <section class="editorial-section" id="extraction">
+    <div class="section-kicker"><span>02</span> From pixels to passages</div>
+    <div class="section-copy">
+      <h2>Small crops preserve the tiny print.</h2>
+      <p>Separate book spreads into leaves, locate printed gutters and mastheads, then recognize short regions with GLM-OCR. Four parallel requests and CUDA graphs keep the local GPU busy.</p>
+      <!-- extraction-figures -->
+      <p class="fine-print">Real saved v4 geometry. Green marks proposed gutters, blue the masthead cutoff, red the OCR chunks. These are proposals, not verified boundaries or word-level coordinates.</p>
+      <div class="finding-grid"><div><h3>Recognition</h3><p>GLM and DeepSeek each reached 0.52% character error on two checked pilot excerpts; Paddle reached 0.78%, fixed-chunk Tesseract 5.88%.</p></div><div><h3>Throughput</h3><p>Four-request CUDA graphs ran 3.43× faster than four-request eager execution on the same 44-input benchmark.</p></div></div>
+      <p class="fine-print">Only 244 reference words informed those provisional pilot scores. They do not establish full-page recall or corpus-wide accuracy.</p>
+    </div>
+  </section>
+  <section class="editorial-section" id="loop-repair">
+    <div class="section-kicker"><span>03</span> The current edition · v5</div>
+    <div class="section-copy">
+      <h2>Repair the boundaries, then read again.</h2>
+      <p>The targeted pass reprocessed <strong>6,445 suspect regions across 1,496 scans</strong>. New crops use original pixels, tilted printed-rule cuts and bounded recognition. An early equal-width fallback was discarded after a preview showed it slicing through text.</p>
+      <!-- reprocessing-summary -->
+      <p>Unresolved wide geometry or problematic new output keeps the prior text with a review flag. Original attempts remain preserved. Crop footprints stay fixed to avoid duplicating neighboring text, so already-clipped outer edges can still need correction.</p>
+      <p><a class="text-link" href="../research/#health">See the measured before & after →</a></p>
+    </div>
+  </section>
+  <section class="editorial-section" id="comparison">
+    <div class="section-kicker"><span>04</span> Reading the numbers</div>
+    <div class="section-copy">
+      <h2>Recognizable words aren’t necessarily correct words.</h2>
+      <p>Homepage statistics compare GLM with Archive’s existing OCR on the same scans. Counts use normalized word tokens and a pinned dictionary. Archive OCR is a page-mapped derivative, not a verified PDF text layer.</p>
+      <p>Names can fail the dictionary; invented prose can pass it. Our repair study found much less repetition with almost no change in dictionary coverage. Accuracy, completeness and reading order need different checks.</p>
+      <p class="download-links"><a href="../research/">Read the research notebook →</a><a href="../comparison.json">Comparison data ↓</a></p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,92 @@
+<div class="editorial-page">
+  <header class="page-intro">
+    <p class="eyebrow">Research notebook <span>29 September 2026</span></p>
+    <h1>Better text.<br>A clearer view of its limits.</h1>
+    <p class="standfirst">We checked what improved after recropping—and whether a local OCR model could recognize its own mistakes from the extracted text.</p>
+    <nav class="section-nav" aria-label="Research sections">
+      <a href="#health">Before & after</a><a href="#judges">Local evaluators</a><a href="#measuring">What to measure</a><a href="#references">Sources & data</a>
+    </nav>
+  </header>
+
+  <section class="editorial-section" id="health">
+    <div class="section-kicker"><span>01</span> The repair audit</div>
+    <div class="section-copy">
+      <h2>Fewer loops. Fewer unfinished extractions.</h2>
+      <p>The v5 edition reprocessed 6,445 suspect crops. We selected 4,189 replacements and retained 2,256 earlier readings with unresolved flags.</p>
+      <p>For this comparison, replacement pieces are joined back into the <strong>same 60,065 original source regions</strong>. Splitting a crop into smaller pieces cannot improve the denominator.</p>
+      <!-- health-highlights -->
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Paired OCR health results">
+        <!-- health-table -->
+      </div>
+      <aside class="editorial-note"><strong>A health indicator is not an accuracy score.</strong> Replacements were screened for repetition and termination, so improvements on those measures are expected. They do not prove faithful transcription or complete page coverage.</aside>
+      <h3>The less obvious result</h3>
+      <p>Dictionary coverage barely changed. Its missing-word share rose slightly even as loops disappeared: repeated common words had made the old output look healthier. Very long tokens also increased. Neither fluent prose nor a good dictionary score is enough to approve a reading.</p>
+      <details class="research-detail"><summary>Definitions, uncertainty & secondary checks</summary>
+        <div class="detail-body">
+          <p><strong>Repetition:</strong> count the union of redundant positions in eight-word phrases occurring at least four times. A high candidate has at least 80 redundant words and a 25% repeated footprint. Printed refrains and recurring notices can still trigger this diagnostic.</p>
+          <p><strong>Dictionary misses:</strong> a pinned word list, Unicode normalization and dictionary-validated dehyphenation. Names and historical spellings may be absent. Parent-region percentages differ slightly from the homepage’s whole-page comparison because words can join across boundaries.</p>
+          <p><strong>Whole-page check:</strong> mean scan-level repetition fell 1.519 percentage points. A 2,000-resample bootstrap over 44 source bundles gives a 95% interval of −1.728 to −1.327 points. Recurring notices are included.</p>
+          <p><strong>Independent OCR comparison:</strong> mean bag-of-words disagreement with Archive OCR moved from 54.3623% to 54.2019%. This is agreement between two noisy systems, not a 54% error rate. Word order is ignored.</p>
+          <p>These intervals describe variation across source bundles, not uncertainty in unmeasured transcription accuracy. <a href="../health.json">Download the aggregate measurements →</a></p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="judges">
+    <div class="section-kicker"><span>02</span> The evaluator experiment</div>
+    <div class="section-copy">
+      <h2>More context didn’t make GLM a critic.</h2>
+      <p>We gave GLM-OCR the same target with <strong>one, two and three nominal columns</strong> of extracted text. It saw no image, quality flag or reference judgment. The task was to identify a visible issue and quote evidence from the target.</p>
+      <!-- judge-results -->
+      <p>The experiment covered 29 human-labeled crop layouts, 24 earlier scan-reviewed repairs and four synthetic controls. Those are 57 targets repeated across three context sizes, not 171 independent examples.</p>
+      <div class="finding-grid">
+        <div><h3>What it returned</h3><p>Copied schema placeholders, continued newspaper text, or output that ran to the token limit. All inputs fit the context window.</p></div>
+        <div><h3>Did simpler prompts help?</h3><p>A yes/no prompt answered “yes” to every control. An empty-schema prompt returned ten usable answers—all “no visible issue.” Neither separated clean text from corruption.</p></div>
+      </div>
+      <aside class="editorial-note"><strong>Decision: keep GLM-OCR on recognition.</strong> This checkpoint did not work as a text-only quality judge under the tested prompts. Its documented scope is recognition and structured information extraction.</aside>
+      <h3>Images gave the more useful signal</h3>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Local evaluator findings">
+        <table><caption>Different experiments, different evidence—not a shared leaderboard</caption><thead><tr><th scope="col">Evaluator</th><th scope="col">Input</th><th scope="col">Finding</th></tr></thead><tbody>
+          <tr><th scope="row">Qwen3-VL-4B</th><td>Crop image</td><td>Caught all five multi-column test crops; missed two clipped crops. Flagged 0/22 single-column controls.</td></tr>
+          <tr><th scope="row">Kev-4B</th><td>Extracted text</td><td>Called 13/24 earlier repairs readable; 12 of those still had source-visible defects.</td></tr>
+          <tr><th scope="row">Cheap text rules</th><td>Repetition + dictionary misses</td><td>Caught 8/22 defective reviewed repairs, but 0/7 bad layouts in the human-labeled test set.</td></tr>
+        </tbody></table>
+      </div>
+      <p class="fine-print">One-column labels do not certify transcription quality. Repair judgments were prior AI scan-grounded reviews, not human transcription gold. The Qwen sample is small; a separate audit found false alarms on ads and tables. None of these results justify automatic approval.</p>
+      <details class="research-detail"><summary>Model and experiment details</summary><div class="detail-body">
+        <p>GLM-OCR revision <code>2e85a62840ccac27daa451df36c736c4636b8628</code>; vLLM 0.28.0; BF16; temperature 0; 32,768-token context; 256-token response cap. The largest input was 14,668 tokens. No input was silently truncated.</p>
+        <p>The marked target was one extraction chunk inside complete nominal column groupings. Neighboring text stayed fixed. Geometry labels came from the earlier source-grouped test split. The 24 reviewed repairs predate v5 and do not estimate v5 accuracy.</p>
+        <p>The primary experiment made 171 calls. Two post-hoc prompts added 24 synthetic-control calls. Invalid responses were counted separately rather than credited as detections. No new evaluator was added to the production pipeline.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="measuring">
+    <div class="section-kicker"><span>03</span> A useful measurement stack</div>
+    <div class="section-copy">
+      <h2>Measure recognition, coverage and order.</h2>
+      <ol class="measurement-list">
+        <li><h3>Generation health</h3><p>Track loops, token limits, request failures, empty output and extreme size changes. Cheap signals make good review queues.</p></li>
+        <li><h3>Source coverage & reading order</h3><p>Check image geometry and source-verified phrases. A missing column can leave behind completely plausible text.</p></li>
+        <li><h3>Transcription accuracy</h3><p>Measure character and word error rates against representative, verified transcriptions. Our small pilot references cannot establish corpus-wide accuracy.</p></li>
+        <li><h3>Detector usefulness</h3><p>Report caught failures, false alarms and abstentions separately. Compare new models with simple rules on source-held-out examples.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="editorial-section" id="references">
+    <div class="section-kicker"><span>04</span> Follow the evidence</div>
+    <div class="section-copy">
+      <h2>Sources & reproducible results</h2>
+      <ul class="reference-list">
+        <li><a href="https://ocr-d.de/en/spec/ocrd_eval">OCR-D quality assurance ↗</a><span>Text errors, layout evaluation and reading-order limitations.</span></li>
+        <li><a href="https://github.com/allenai/olmocr/tree/main/olmocr/bench">olmOCR-Bench ↗</a><span>Source-reviewed presence, absence and natural-order assertions.</span></li>
+        <li><a href="https://arxiv.org/abs/2412.07626">OmniDocBench · CVPR 2025 ↗</a><span>Task-specific evaluation across varied document layouts.</span></li>
+        <li><a href="https://huggingface.co/zai-org/GLM-OCR#prompt-limited">GLM-OCR model card ↗</a><span>Supported recognition and information-extraction prompts.</span></li>
+      </ul>
+      <p class="download-links"><a href="../health.json">Health measurements ↓</a><a href="../loop-audit.json">Repetition audit ↓</a><a href="../catalog.json">Dataset provenance ↓</a></p>
+      <p class="fine-print">Public measurements include report fingerprints and aggregate results. Crop text, reviewer records and local deployment details are excluded.</p>
+    </div>
+  </section>
+</div>

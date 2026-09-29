@@ -127,6 +127,16 @@ def main():
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
             page.locator('.volume-list a').first.click()
             assert 'No output flags' not in page.locator('.scan-list').inner_text()
+            page.set_viewport_size({'width': 1400, 'height': 1000})
+            page.goto(base + 'research/')
+            assert page.locator('h1').count() == 1
+            assert page.locator('.health-highlights strong').all_inner_texts() == ['59.0%', '58.5%']
+            assert page.locator('.experiment-result > strong').inner_text() == '0 / 171'
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+            for table in page.locator('.table-wrap').all():
+                assert table.locator('caption').count() == 1
+            page.screenshot(path='/tmp/recorder-research-desktop.png',full_page=True)
+            assert not errors, errors
             browser.close()
             print('PASS: search query URLs, highlights/next/previous, reload, phrases, filters, source links, lazy text, mobile')
     finally:

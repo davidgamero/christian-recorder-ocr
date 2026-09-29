@@ -35,8 +35,8 @@ def shell(title, body, *, search=False):
 <title>{e(title)} · Christian Recorder OCR</title><meta name="description" content="Searchable machine transcriptions of The Christian Recorder, with links to original scans and OCR research notes.">
 <link rel="stylesheet" href="{url('assets/style.css')}">{assets}<script src="{url('assets/site.js')}" defer></script></head>
 <body class="{'home' if search else 'interior'}"><a class="skip" href="#main">Skip to content</a><header class="masthead"><a class="brand" href="{url()}">The Christian Recorder</a>
-<div class="edition"><span>A searchable newspaper archive</span><nav aria-label="Main"><a href="{url('#search')}">Search</a><a href="{url('volumes/')}">Volumes</a><a href="{url('about/')}">The project</a><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Originals ↗</a></nav></div></header>
-<main id="main">{body}</main><footer>Machine-transcribed. Check the scan before quoting. <a href="{url('about/')}">Methods</a> · <a href="https://github.com/davidgamero/christian-recorder-ocr">GitHub</a></footer></body></html>'''
+<div class="edition"><span>A searchable newspaper archive</span><nav aria-label="Main"><a href="{url('#search')}">Search</a><a href="{url('volumes/')}">Volumes</a><a href="{url('about/')}">The project</a><a href="{url('research/')}">Research</a><a href="https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame">Originals ↗</a></nav></div></header>
+<main id="main">{body}</main><footer><span>Machine-transcribed. Check the scan before quoting.</span><span><a href="{url('about/')}">Methods</a> · <a href="{url('research/')}">Research</a> · <a href="https://github.com/davidgamero/christian-recorder-ocr">GitHub</a></span></footer></body></html>'''
 
 
 def transcription(text, position=None, loop_tasks=None):
@@ -90,6 +90,9 @@ def main():
     catalog = json.loads((ROOT / "corpus/catalog.json").read_text())
     comparison = json.loads((ROOT / 'corpus/comparison.json').read_text())
     loop_audit = json.loads((ROOT / 'corpus/loop-audit.json').read_text())
+    health = json.loads((ROOT / 'corpus/health.json').read_text())
+    if health['run'] != catalog['run']:
+        raise ValueError('Health research does not match published corpus')
     if loop_audit['run'] != catalog['run']:
         raise ValueError('Loop audit does not match published corpus')
     positions = json.loads(gzip.decompress((ROOT / 'corpus/positions.json.gz').read_bytes()))
@@ -181,14 +184,15 @@ def main():
 </pagefind-results>
 <noscript>Full-text search requires JavaScript. <a href="{url('volumes/')}">Browse every volume and transcription without JavaScript.</a></noscript></section>
 <details id="project-intro" class="extraction-stats" open><summary><h2 id="stats-title">What is this?</h2><span>Project & extraction results</span></summary><div class="intro-body">
-<p>This project improves optical character recognition (OCR) to extract text from archived newspapers and make it searchable.</p>
+<p class="intro-lead">The African Methodist Episcopal Church’s newspaper, made searchable.<br>Find a passage here. Read it in the original.</p>
 <div class="stat-columns"><div><strong>+{comparison['word_count_increase_pct']:.0f}%</strong><h3>More text to search</h3><p>{original_stats['total_words']/1e6:.1f}m → {glm_stats['total_words']/1e6:.1f}m word tokens</p></div>
 <div><strong>+{comparison['recognized_word_increase_pct']:.0f}%</strong><h3>More recognized words</h3><p>{original_stats['recognized_words']/1e6:.1f}m → {glm_stats['recognized_words']/1e6:.1f}m dictionary matches</p></div>
 <div><strong>{original_stats['unrecognized_pct']:.1f}% → {glm_stats['unrecognized_pct']:.1f}%</strong><h3>Fewer unrecognized forms</h3><p>Share absent from the word list</p></div></div>
 <p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p>
-<p class="fine-print">{e(loop_audit['repair_status'])} <a href="{url('about/#loop-repair')}">Rerun details ↗</a></p>
+<p class="fine-print">Compared with Archive’s existing OCR, not a verified transcription.</p>
 {story}
-<p class="fine-print">Illustrated workflow; crop links, not verified word coordinates. {catalog['flagged_scans']:,} scans have output flags. <a href="{url('about/#extraction')}">Real crop overlays ↗</a></p></div></details>'''
+<p class="fine-print">Illustrated workflow; crop links, not verified word coordinates. {catalog['flagged_scans']:,} scans have output flags. <a href="{url('about/#extraction')}">Real crop overlays ↗</a></p></div></details>
+<section class="research-teaser" aria-labelledby="latest-research"><div><p class="eyebrow">From the research notebook · September 2026</p><h2 id="latest-research">Fewer loops.<br>Better questions about quality.</h2></div><div><p>The new edition reduces high-repetition regions by <strong>{100*(1-health['regions']['after']['high_repetition']/health['regions']['before']['high_repetition']):.0f}%</strong>. We also tested whether local models could spot bad extractions from their text.</p><a class="text-link" href="{url('research/')}">Read the findings →</a></div></section>'''
     write('index.html', shell('Search the archive', home, search=True))
     about = (SRC / 'content/about.html').read_text()
     if catalog.get('reprocessing'):
@@ -196,11 +200,30 @@ def main():
         about = about.replace('<!-- reprocessing-summary -->', f"<p>{changes['selected_chunks']:,} parent chunks replaced after automatic checks; {changes['retained_candidates']:,} retained with unresolved flags. Current published text: {catalog['text_bytes']/1e6:.1f} MB / {catalog['word_tokens']/1e6:.2f} million whitespace-separated tokens. This is not human-verified correction.</p>")
     about = about.replace('<!-- extraction-figures -->', f'<div class="process-grid"><figure><img src="{url("assets/figures/columns.svg")}" alt="Column proposals and masthead cutoff"><figcaption>Detected columns · green gutters, blue masthead.</figcaption></figure><figure><img src="{url("assets/figures/chunks.svg")}" alt="Source-mapped OCR chunk polygons"><figcaption>Short chunks · the model receives one crop at a time.</figcaption></figure></div><p><a href="{url("assets/figures/provenance.json")}">Figure provenance and saved crop polygon</a> · <a href="{url("scans/"+figure["page_id"]+"/")}">Example transcription and original scan</a></p>')
     write('about/index.html', shell('Methods, findings and limitations', about))
+    research = (SRC / 'content/research.html').read_text()
+    before, after = health['regions']['before'], health['regions']['after']
+    highlights = '<div class="health-highlights">' + ''.join(
+        f'<div><strong>{100*(1-after[key]/before[key]):.1f}%</strong><span>{label}</span></div>'
+        for key, label in [('high_repetition', 'fewer high-repetition regions'), ('truncated', 'fewer token-limit failures')]) + '</div>'
+    metrics = [('High-repetition regions', 'high_repetition', ',.0f', ''),
+               ('Token-limit regions', 'truncated', ',.0f', ''),
+               ('Repeated-phrase footprint', 'repetition_pct', '.2f', '%'),
+               ('Dictionary-missing share', 'unknown_pct', '.3f', '%'),
+               ('Tokens longer than 30 characters', 'long_tokens', ',.0f', ''),
+               ('Empty regions', 'empty', ',.0f', '')]
+    table = '<table><caption>Same source regions · original v4 → published v5</caption><thead><tr><th scope="col">Health indicator</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody>' + ''.join(
+        f'<tr><th scope="row">{label}</th><td>{before[key]:{fmt}}{unit}</td><td>{after[key]:{fmt}}{unit}</td></tr>'
+        for label, key, fmt, unit in metrics) + '</tbody></table>'
+    research = research.replace('<!-- health-highlights -->', highlights).replace('<!-- health-table -->', table)
+    judge = health['judge']
+    research = research.replace('<!-- judge-results -->', f'<div class="experiment-result"><strong>{judge["valid_responses"]} / {judge["requests"]}</strong><div><h3>Usable, evidence-supported judgments</h3><p>One, two or three columns: no context size produced a valid result under the primary prompt.</p></div></div>')
+    write('research/index.html', shell('OCR health & local evaluator research', research))
     write('.nojekyll', '')
     write('404.html', shell('Page not found', f'<h1>Page not found</h1><p><a href="{url()}">Search or browse the archive.</a></p>'))
     write('catalog.json', json.dumps(catalog, indent=2, ensure_ascii=False))
     write('comparison.json', json.dumps(comparison, indent=2))
     write('loop-audit.json', json.dumps(loop_audit, indent=2))
+    write('health.json', json.dumps(health, indent=2))
     print(f"Generated {catalog['scans']} scans, {len(catalog['sources'])} volumes at {BASE}")
 
 

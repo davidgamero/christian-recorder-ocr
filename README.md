@@ -1,16 +1,54 @@
 # christian recorder ocr
 
-**[check out the results first →](https://davidgamero.github.io/christian-recorder-ocr/)**
+### old newspapers. searchable text. original scans.
 
-[original source catalog — penn](https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame) · [browse volumes + archived originals](https://davidgamero.github.io/christian-recorder-ocr/volumes/) · [methods + caveats](https://davidgamero.github.io/christian-recorder-ocr/about/)
+**[search the archive →](https://davidgamero.github.io/christian-recorder-ocr/)**
+
+[browse volumes](https://davidgamero.github.io/christian-recorder-ocr/volumes/) · [the project](https://davidgamero.github.io/christian-recorder-ocr/about/) · [research notebook](https://davidgamero.github.io/christian-recorder-ocr/research/) · [originals at penn](https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame)
 
 <!-- corpus-summary-start -->
 2,376 scans, 44 volumes, 20.85 million word tokens. 120.4 mb of extracted text from *the christian recorder*, the african methodist episcopal church's newspaper. searchable on github pages, with links back to the scans.
 <!-- corpus-summary-end -->
 
-search links keep your query in `?q=…`. open a result to highlight exact matches and jump between them. quoted phrases stay together; word variants found by search may not have exact highlights.
+> a finding aid, not a verified transcription. check the original scan before quoting.
 
-the sticky reading bar opens the archived original. paragraph labels show progress through extracted text and the saved crop's leaf/column—not physical page percentage or verified word coordinates. filters start collapsed on mobile; volumes are grouped by year.
+## read & explore
+
+- **search a name, place or phrase.** use quotes for phrases; queries follow you into the reading view.
+- **follow the source.** the sticky reading bar opens the original scan. existing archive ocr is available for comparison.
+- **keep your place.** paragraph links show progress through extracted text and saved crop identities, not verified word coordinates.
+- **browse by year.** mobile filters start collapsed; every volume has a scan-by-scan index.
+
+## what changed
+
+the v5 repair pass reduced generation failures. a follow-up study compared the **same 60,065 original regions**, joining replacement subcrops before scoring.
+
+| health indicator | original v4 | published v5 |
+|---|---:|---:|
+| high-repetition regions | 434 | **178** |
+| token-limit failures | 439 | **182** |
+| repeated-phrase footprint | 3.47% | **1.55%** |
+| dictionary-missing share | 2.124% | 2.130% |
+| tokens longer than 30 characters | 142 | 173 |
+
+**59% fewer high-repetition regions; 58.5% fewer token-limit failures.** dictionary coverage barely moved, and some indicators worsened. the repairs were screened for loops and truncation, so those gains aren't independent proof of transcription accuracy.
+
+### can a local model catch bad extractions?
+
+| experiment | result | takeaway |
+|---|---|---|
+| glm-ocr · text with 1, 2 or 3 columns of context | **0/171 evidence-supported judgments** | copied placeholders or continued text; more context didn't help |
+| simpler glm prompts · synthetic controls | yes/no said “yes” to everything; ten usable json answers all said “no issue” | valid formatting isn't discrimination |
+| qwen3-vl-4b · crop images | caught 5/5 multi-column test crops; missed 2 clipped crops; flagged 0/22 singles | promising geometry signal, with ad/table false alarms in a separate audit |
+| kev-4b · text-only repair review | 12 of 13 outputs called readable still had source-visible defects | readability doesn't establish fidelity |
+
+these are different, small experiments—not a shared leaderboard. the primary glm test used 53 real targets and four synthetic controls at three context sizes. column labels describe geometry; earlier repair judgments were ai scan-grounded reviews, not human transcription gold.
+
+**next useful measurements:** source-verified phrase presence, reading order, and character/word error on representative transcriptions. cheap repetition checks and image-based layout review remain complementary.
+
+[full methods, definitions & sources →](https://davidgamero.github.io/christian-recorder-ocr/research/) · [aggregate health data](corpus/health.json)
+
+---
 
 ## results table
 
@@ -33,7 +71,7 @@ speed test, same 44 chunks/headers, two repeats:
 
 original v4 run: **all 2,376 scans processed**, zero failed pages, **435 scans with output flags**. the current snapshot includes the targeted v5 pass below. finished doesn't mean flawless. pilot accuracy covers only 244 reference words, not full-page recall. request times are summed latency; deepseek used two concurrent calls, initial local tests used one.
 
-## how we got here
+## the repair pass
 
 <!-- reprocessing-start -->
 **targeted v5 update:** reprocessed **6,445 chunks across 1,496 scans**: all 464 known-failure and 5,981 multiple-warning candidates. **4,189 replacements selected; 2,256 originals retained with unresolved flags.** the new dataset is `glm-full-archive-v5-20260929`.
@@ -50,6 +88,8 @@ new crops use detected printed rules, up to 900 pixels of height, and bounded st
 <!-- reprocessing-end -->
 
 an earlier 442-candidate loop repair passed many automatic checks, but source review found clipped columns and omissions. we kept those attempts separate. the new pass reads the original scan pixels and cuts at detected, possibly tilted, printed rules. an equal-width fallback was discarded after a preview showed it cutting through text. missing gutters, clipped exterior edges and reading order still need source review; clean output is not proof of completeness.
+
+## how we got here
 
 **1. start with tesseract.** learned a column template, aligned curved gutters, and tried overlapping strips. kept source coordinates so every reading could be checked against the image.
 
@@ -98,6 +138,7 @@ python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data --run glm
 python3 scripts/export_positions.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_loop_audit.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v5-20260929/report.json
+python3 scripts/export_health.py --data /path/to/andrew-newspaper/data
 python3 scripts/update_results_readme.py
 # optional: regenerate source-derived teaching figures (requires pillow)
 python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
@@ -105,7 +146,7 @@ python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 
 `src/assets/` holds styles, scripts and svg diagrams; `src/content/` holds page copy. `corpus/` stores checksummed text snapshots, `scripts/` builds them, and `.github/workflows/pages.yml` publishes the site. builds don't contact archive or run a model. private reviewer data, credentials and machine paths aren't exported.
 
-optional browser checks (playwright + chromium): `python3 tests/browser_smoke.py` and `python3 tests/mobile_audit.py`. the mobile audit covers 40 views at 320/390/430/768px: search, filters, reading controls, original ocr, source details, volume browsing, project and 404. checks include overflow, primary touch targets and highlighted text staying below the sticky bar.
+optional browser checks (playwright + chromium): `python3 tests/browser_smoke.py` and `python3 tests/mobile_audit.py`. the mobile audit covers 48 views at 320/390/430/768px: search, filters, reading controls, original ocr, source details, volume browsing, project, research and 404. checks include overflow, primary touch targets, expandable research methods and highlighted text staying below the sticky bar.
 
 <!-- comparison-start -->
 the front-page stats compare all 2,376 matched scans: **18% more lexical word tokens**, **54% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**.

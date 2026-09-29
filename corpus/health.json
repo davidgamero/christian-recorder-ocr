@@ -1,0 +1,468 @@
+{
+  "schema": 1,
+  "date": "2026-09-29",
+  "run": "glm-full-archive-v5-20260929",
+  "baseline_run": "glm-full-archive-v4-20260925",
+  "regions": {
+    "before": {
+      "words": 21127105,
+      "characters": 121062008,
+      "redundant_words": 733409,
+      "high_repetition": 434,
+      "review_repetition": 494,
+      "lexical_words": 20506832,
+      "unknown_words": 435501,
+      "long_tokens": 142,
+      "replacement_characters": 0,
+      "control_characters": 0,
+      "empty": 0,
+      "truncated": 439,
+      "request_error": 0,
+      "regions": 60065,
+      "repetition_pct": 3.4714126710687525,
+      "unknown_pct": 2.1236873642891307,
+      "long_token_pct": 0.0006721223754982048,
+      "truncated_region_pct": 0.7308748855406643
+    },
+    "after": {
+      "words": 20847128,
+      "characters": 120092828,
+      "redundant_words": 322673,
+      "high_repetition": 178,
+      "review_repetition": 467,
+      "lexical_words": 20392788,
+      "unknown_words": 434306,
+      "long_tokens": 173,
+      "replacement_characters": 0,
+      "control_characters": 0,
+      "empty": 0,
+      "truncated": 182,
+      "request_error": 0,
+      "regions": 60065,
+      "repetition_pct": 1.5478055298552396,
+      "unknown_pct": 2.129703893356808,
+      "long_token_pct": 0.0008298505194576442,
+      "truncated_region_pct": 0.3030050778323483
+    }
+  },
+  "targeted": {
+    "before": {
+      "words": 3415504,
+      "characters": 18275517,
+      "redundant_words": 731273,
+      "high_repetition": 432,
+      "review_repetition": 404,
+      "lexical_words": 2995397,
+      "unknown_words": 63873,
+      "long_tokens": 41,
+      "replacement_characters": 0,
+      "control_characters": 0,
+      "empty": 0,
+      "truncated": 439,
+      "request_error": 0,
+      "regions": 6445,
+      "repetition_pct": 21.410397996898848,
+      "unknown_pct": 2.132371769084365,
+      "long_token_pct": 0.001200408490225747,
+      "truncated_region_pct": 6.811481768813033
+    },
+    "after": {
+      "words": 3135527,
+      "characters": 17306337,
+      "redundant_words": 320537,
+      "high_repetition": 176,
+      "review_repetition": 377,
+      "lexical_words": 2881353,
+      "unknown_words": 62678,
+      "long_tokens": 72,
+      "replacement_characters": 0,
+      "control_characters": 0,
+      "empty": 0,
+      "truncated": 182,
+      "request_error": 0,
+      "regions": 6445,
+      "repetition_pct": 10.22274724472154,
+      "unknown_pct": 2.175297507802758,
+      "long_token_pct": 0.002296264710844461,
+      "truncated_region_pct": 2.8238944918541504
+    }
+  },
+  "baseline_bow_disagreement": {
+    "before": 0.5436230400272816,
+    "after": 0.542019451476443
+  },
+  "baseline_disagreement_change": {
+    "mean_delta": -0.0016035885508385288,
+    "cluster_bootstrap_95_interval": [
+      -0.0019765939368187966,
+      -0.0012183192676996516
+    ],
+    "source_clusters": 44
+  },
+  "page_repetition_percentage_point_change": {
+    "mean_delta": -1.5188595194869556,
+    "cluster_bootstrap_95_interval": [
+      -1.7284578865327629,
+      -1.326921541314812
+    ],
+    "source_clusters": 44
+  },
+  "dictionary_sha256": "e65d99cd074785c2cefc222b3066208e3f229cfb7d53f5734ac5b409ebea1bf2",
+  "judge": {
+    "requests": 171,
+    "valid_responses": 0,
+    "summaries": {
+      "human_layout_test-1": {
+        "n": 29,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 7,
+          "tn": 21,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.045454545454545456
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 22,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 7,
+          "fp": 22,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.2413793103448276,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 37.40209785406478
+      },
+      "human_layout_test-2": {
+        "n": 29,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 7,
+          "tn": 21,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.045454545454545456
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 22,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 7,
+          "fp": 22,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.2413793103448276,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 41.267591539537534
+      },
+      "human_layout_test-3": {
+        "n": 29,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 7,
+          "tn": 21,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.045454545454545456
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 7,
+          "tn": 22,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 7,
+          "fp": 22,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.2413793103448276,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 40.723111929837614
+      },
+      "scan_reviewed_repairs-1": {
+        "n": 24,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 14,
+          "tn": 2,
+          "recall": 0.36363636363636365,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 22,
+          "tn": 2,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 22,
+          "fp": 2,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.9166666666666666,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 19.313425591681153
+      },
+      "scan_reviewed_repairs-2": {
+        "n": 24,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 14,
+          "tn": 2,
+          "recall": 0.36363636363636365,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 22,
+          "tn": 2,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 22,
+          "fp": 2,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.9166666666666666,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 22.499556402442977
+      },
+      "scan_reviewed_repairs-3": {
+        "n": 24,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 14,
+          "tn": 2,
+          "recall": 0.36363636363636365,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 22,
+          "tn": 2,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 22,
+          "fp": 2,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.9166666666666666,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 24.399217143654823
+      },
+      "synthetic_controls-1": {
+        "n": 4,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 1,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "tn": 1,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.75,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 0.9884630462620407
+      },
+      "synthetic_controls-2": {
+        "n": 4,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 1,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "tn": 1,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.75,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 0.9474796249996871
+      },
+      "synthetic_controls-3": {
+        "n": 4,
+        "valid": 0,
+        "uncertain": 0,
+        "baseline": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 1,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "model_issue_only": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "tn": 1,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "model_review_including_invalid": {
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "tn": 0,
+          "recall": 1.0,
+          "precision": 0.75,
+          "false_positive_rate": 1.0
+        },
+        "model_new_bad_catches": 0,
+        "seconds": 0.793890736065805
+      }
+    }
+  },
+  "prompt_controls": {
+    "binary": {
+      "n": 12,
+      "valid": 12,
+      "correct": 9
+    },
+    "empty_schema": {
+      "n": 12,
+      "valid": 10,
+      "correct": 3
+    }
+  },
+  "report_hashes": {
+    "health": "b0ef80bae1ff982d2a1c2e3177cbf87ebe7210db8aae98a7b78a33e6f2855819",
+    "judge": "aee26e4cfd0d729d8c3703df0f47e7d1cdcb97bf137312c9e9e25b969e4deca0",
+    "prompt_controls": "300ae565e21f7ad72636f9e9ab7796369ce58f18187bf24276165232cfff10b0"
+  },
+  "notes": [
+    "Invariant 60065 parent regions; v5 children concatenated in saved order before scoring.",
+    "Whole-page repetition includes legitimate recurring notices; not interchangeable with response-loop metric.",
+    "Archive baseline disagreement is NOT CER, WER or error rate against ground truth.",
+    "Selected replacement policy already screens repetition: improvement on that metric is selection-conditioned.",
+    "No representative transcription ground truth is available; human column counts do not certify OCR fidelity.",
+    "Same targets, full nominal 1/2/3-column text; neighboring text never labeled. No truncation; context overflow counted as failure.",
+    "No labels, flags, image, source names or repair status in prompts. Historical test split reused; not a newly untouched holdout.",
+    "Invalid responses are not successful issue detections; conservative review counts are reported separately."
+  ],
+  "sources": [
+    {
+      "title": "OCR-D quality assurance",
+      "url": "https://ocr-d.de/en/spec/ocrd_eval"
+    },
+    {
+      "title": "olmOCR-Bench methodology",
+      "url": "https://github.com/allenai/olmocr/tree/main/olmocr/bench"
+    },
+    {
+      "title": "OmniDocBench",
+      "url": "https://arxiv.org/abs/2412.07626"
+    },
+    {
+      "title": "GLM-OCR model card",
+      "url": "https://huggingface.co/zai-org/GLM-OCR#prompt-limited"
+    }
+  ]
+}

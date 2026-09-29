@@ -65,6 +65,15 @@ def main():
                 audit('volume')
                 page.goto(base+'about/')
                 audit('about')
+                page.screenshot(path=f'/tmp/recorder-about-{width}.png',full_page=True)
+                page.goto(base+'research/')
+                audit('research')
+                assert page.locator('.experiment-result > strong').inner_text()=='0 / 171'
+                assert page.locator('#health tbody tr').count()==6
+                for summary in page.locator('.research-detail summary').all():
+                    summary.tap()
+                audit('research-expanded')
+                page.screenshot(path=f'/tmp/recorder-research-{width}.png',full_page=True)
                 page.goto(base+'404.html')
                 audit('404')
                 assert not errors,errors
