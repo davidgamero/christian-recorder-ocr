@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "glm-full-archive-v4-20260925",
+  "run": "glm-full-archive-v5-20260929",
   "sources": [
     {
       "id": "christianrecordephil_4a2",
@@ -11,7 +11,7 @@
       "bundle_sha256": "1498afe042d59a14d32004914d025b19d19d370a3d5417518af4bb718f052b15",
       "scans": 116,
       "file": "christianrecordephil_4a2.json.gz",
-      "sha256": "b2d7b1fd55b04fa6de476bdd74e841edcac32bae85cb2d0b531ac646ef08f15f"
+      "sha256": "83cc8e07f5b84d8ddcda4c39ccf46c75416388468b01f49dd7817b462c40cad0"
     },
     {
       "id": "christianrecordephil_4b",
@@ -22,7 +22,7 @@
       "bundle_sha256": "4cd5bd252fa639c5bcb95ef532d4a2fab7aa0620dfdb2aca41a4f1c851b744b6",
       "scans": 116,
       "file": "christianrecordephil_4b.json.gz",
-      "sha256": "3108c08f0127a2bde1c84f9403bdc2dcc68aaa91819ee38c081fe7377e442db4"
+      "sha256": "84f624f0f1ce09720f628ffea58f923f55e4728447b30ccaa465b9aaf3a35598"
     },
     {
       "id": "christianrecordephil_4b2",
@@ -33,7 +33,7 @@
       "bundle_sha256": "047e49e5192a1f497bbe35d6103e4eb0abff19d4108ea0420102cf69b5a1f8ad",
       "scans": 118,
       "file": "christianrecordephil_4b2.json.gz",
-      "sha256": "59fac9a844ff98853a4ea5fd01f8e29b1d1c3e959271f36381a9358045edca69"
+      "sha256": "baf5dc9bca7f15c48b3027634b9b2d9bd2691d0893eda427f1238240ce7287bd"
     },
     {
       "id": "christianrecordephil_4c",
@@ -44,7 +44,7 @@
       "bundle_sha256": "b1ee066e526c7410279b59c8e6098e13e6ea3cd1fdb736a81a3c358b79d8e415",
       "scans": 201,
       "file": "christianrecordephil_4c.json.gz",
-      "sha256": "283b2d75584d46cf43edcf1be17213c91a63b0d1286abe4204e59fc4013bf6cc"
+      "sha256": "061d2755358ee7c6c26283d5a7c1a110f20ed3f1d7820d1002ce49dcc923aad5"
     },
     {
       "id": "christianrecorder_1854_1855",
@@ -55,7 +55,7 @@
       "bundle_sha256": "39a3add7ba040f73d87038bed026cf8b95f07d933abf372895f0e5610b949cb0",
       "scans": 50,
       "file": "christianrecorder_1854_1855.json.gz",
-      "sha256": "8a80c944c93f2f40a0ecef95d3a6062cc01dbbe55abca1547d516091e880eb6b"
+      "sha256": "7c9fcfdfd306e7d68a2916529261607f609f85af72ba4f455f103a58c8044429"
     },
     {
       "id": "christianrecorder_1856",
@@ -66,7 +66,7 @@
       "bundle_sha256": "55b56b286e8a29bf9221ee4c0827547473be22623c891a3a749dd86198e52322",
       "scans": 5,
       "file": "christianrecorder_1856.json.gz",
-      "sha256": "addeb543fbe30c95558efcc1fa11b349ef4c5e3d2c7259d87b5b5f7436675155"
+      "sha256": "f0445ee188a6796b623684814d47ab8d646a231019919f8c9bebcba9fd10c107"
     },
     {
       "id": "christianrecorder_1861_no13_to_25",
@@ -77,7 +77,7 @@
       "bundle_sha256": "23e1323a90f2e051aa807839322f7506e56fb7482a8fe592a9c3a839bbd96ce5",
       "scans": 52,
       "file": "christianrecorder_1861_no13_to_25.json.gz",
-      "sha256": "9570e67c22a6c09e753f9e4c06edbfa160475e5203c435f7fd36ab65c424f58c"
+      "sha256": "246abf860b7396d612617c44d26da118fca7b4daa2533d52cd621cd5fee7f213"
     },
     {
       "id": "christianrecorder_1861_no1_to_12",
@@ -88,7 +88,7 @@
       "bundle_sha256": "582ac27976058af3225ad6c254d377533e94f86fc1af773d68d425457cc1459a",
       "scans": 45,
       "file": "christianrecorder_1861_no1_to_12.json.gz",
-      "sha256": "1864ef260d4b93203d959dbc46317bba3b3f647727ab337d27b755abf6a37bee"
+      "sha256": "8c2bd21ec73407eb56958b223a7603c7c00549ff2015176e101fd39025164a89"
     },
     {
       "id": "christianrecorder_1861_no26_to_38",
@@ -99,7 +99,7 @@
       "bundle_sha256": "a47795cf4f83ccedb97424840d340a01f7323173f1ae610c63593d38d59331ce",
       "scans": 51,
       "file": "christianrecorder_1861_no26_to_38.json.gz",
-      "sha256": "b88ba5615e5e1394988434421ed1617e99ed69d0317ded10e75692f3a748d4a4"
+      "sha256": "283b2ed878a3c275130ae813e061791455b1b4b6059a77c0339e5623cc00b647"
     },
     {
       "id": "christianrecorder_1861_no_39_to_51",
@@ -110,7 +110,7 @@
       "bundle_sha256": "1d4baf620878d114aab266aec18023ed9276b82d36eaa420f944c8a4c0131dcc",
       "scans": 52,
       "file": "christianrecorder_1861_no_39_to_51.json.gz",
-      "sha256": "4a6ba1af955a714f02eecd286c11563ab97f3959a26a519defa9feddd081d4aa"
+      "sha256": "5cea64b0725c956cddc2d4decf52a2812a8363206e71eb100d02ebbf4bbbddb6"
     },
     {
       "id": "christianrecorder_1862_v2_no52_to_64",
@@ -121,7 +121,7 @@
       "bundle_sha256": "79b32dcef63a8261f9bee3571ef53d09adf132216404854a9ae06fe566b3d44f",
       "scans": 54,
       "file": "christianrecorder_1862_v2_no52_to_64.json.gz",
-      "sha256": "74d8645c94ff417734147be9f3266f0988c162e6a008c93f76bd4479e8087dfc"
+      "sha256": "676ad6f1edbcf1b51200fb9162d15060a206a9e554d9711f5b5fa23520d8296c"
     },
     {
       "id": "christianrecorder_1862_v2_no65_to_68",
@@ -132,7 +132,7 @@
       "bundle_sha256": "98f2d59159307227d54b7580c934c318f642096a2a7b2de6e441bc5513dab660",
       "scans": 52,
       "file": "christianrecorder_1862_v2_no65_to_68.json.gz",
-      "sha256": "aec33a5ca08df8967607099b15c775babbb0ec4b591575196ab2d04b6939d159"
+      "sha256": "cf593d9cd600710bc95cb670e867211074b3a1837bbc14db920b41b9ff3d4501"
     },
     {
       "id": "christianrecorder_1862_v2_no_78_to_90",
@@ -143,7 +143,7 @@
       "bundle_sha256": "d8733d03435e321799797255dbc67c4022fafc26dbf682e2520a673bbb0b31c7",
       "scans": 50,
       "file": "christianrecorder_1862_v2_no_78_to_90.json.gz",
-      "sha256": "d908d2c791108a2906e37c6e8f8c0050055a6d325d418db3c5c3000aa60251f1"
+      "sha256": "921fc527283e1873fc16a8a425808ab3265959a578fc3ed8f7d55a13cac98a1b"
     },
     {
       "id": "christianrecorder_1862_v2_no_91_to_104",
@@ -154,7 +154,7 @@
       "bundle_sha256": "f5e2883f5f2653ecebc13055fe84b75ed1aaad7d6bdb8e9ff9a05b63e5649d7f",
       "scans": 52,
       "file": "christianrecorder_1862_v2_no_91_to_104.json.gz",
-      "sha256": "f53583bea1080ff59eadfdb6f99642aa4f677269fca4c21e9e1906733911bffc"
+      "sha256": "c145decd0df56701782409c5a83c989f169713979f639a57a23e74034ccc7bba"
     },
     {
       "id": "christianrecorder_1863_v3_no14_to_26",
@@ -165,7 +165,7 @@
       "bundle_sha256": "fc093ef52ac93dd60e86cc0afd8a9315792435048874f5e6b44a27d647b9f8d6",
       "scans": 54,
       "file": "christianrecorder_1863_v3_no14_to_26.json.gz",
-      "sha256": "9a6423cf19f54d67539edff36ea6f251114a540ed8e7610ffdfb0f246156a52b"
+      "sha256": "e1e3323162d36a1bb3b2944afc3511aa28970924bf44baf729124498fb6a8bdd"
     },
     {
       "id": "christianrecorder_1863_v3_no27_to_39",
@@ -176,7 +176,7 @@
       "bundle_sha256": "2fb6f5b1a263b35ae30434b019e4f51da4a9f2ee91d911fe64e80bc6fc0eca19",
       "scans": 51,
       "file": "christianrecorder_1863_v3_no27_to_39.json.gz",
-      "sha256": "72d422527137b20f1236ca30e194c98c1227b8e1c2b269a53cadaf4308919e61"
+      "sha256": "029f654b4e9b249375cdd39f73a1d8b19fbc59b9fab330fe958427de03b32874"
     },
     {
       "id": "christianrecorder_1863_v3_no40_to52",
@@ -187,7 +187,7 @@
       "bundle_sha256": "3b821d26526dd7f35de7fd39c1651f9e2e73654d835a41641861c1620ab7d048",
       "scans": 48,
       "file": "christianrecorder_1863_v3_no40_to52.json.gz",
-      "sha256": "a19d53f86d4e683e6a46f69da146ff79659c185008f3c4a2a5bf4ddf8e3d67b6"
+      "sha256": "7cd04daf25a095f53e41c4c2728f7f4528ce3208239b32e3de07c509969566de"
     },
     {
       "id": "christianrecorder_1863_v_3_no1_to_13",
@@ -198,7 +198,7 @@
       "bundle_sha256": "fa756d763037674f91381f8b6149b0a3ce53099e54b58f6ca76dc052d8a99da5",
       "scans": 50,
       "file": "christianrecorder_1863_v_3_no1_to_13.json.gz",
-      "sha256": "c1ca5151a577bee21f8734f1d52d715007492d974199d8182b714a04759b2990"
+      "sha256": "462e5da315688abf3c7a37f47527d5fdb9698d09f1d48b2971133d6bcd885788"
     },
     {
       "id": "christianrecorder_1864_v4_no14_to_26",
@@ -209,7 +209,7 @@
       "bundle_sha256": "e2c98cfb0707fb7313bf944778570d4c494cbce294b4c461a7e57ba11d212219",
       "scans": 51,
       "file": "christianrecorder_1864_v4_no14_to_26.json.gz",
-      "sha256": "b08b12dca5b0f278edf90cb58cd3dd15f1f3660f672dd9f7f9895f1eb6c644df"
+      "sha256": "b79c3ab09ce26c213009a06492d37f8c5ae0cd3b2f62e67f909a7caaf94ef18a"
     },
     {
       "id": "christianrecorder_1864_v4_no1_to_13",
@@ -220,7 +220,7 @@
       "bundle_sha256": "8d4b56d991d3cf6e92f26aaf116297c37241d1b9d01f93227f5d9940bb9b6217",
       "scans": 50,
       "file": "christianrecorder_1864_v4_no1_to_13.json.gz",
-      "sha256": "521f9d82c8edacc2e50e4c16c13f23eb23d602f950a3ab90c94e231829526d8d"
+      "sha256": "1ed60cee6719e0dbc3ef3429159d0285a0526e675f832e4d9e681df3b4266d10"
     },
     {
       "id": "christianrecorder_1864_v4_no27_to_39",
@@ -231,7 +231,7 @@
       "bundle_sha256": "6d9ebea947915735d2b878205606b2be31fb663438b9210d26af28687da52e98",
       "scans": 50,
       "file": "christianrecorder_1864_v4_no27_to_39.json.gz",
-      "sha256": "57ccd763a9e677e786f0a2c14a860db90ac81e00f8b1a9232c7f1635c5c03846"
+      "sha256": "a17cd8e199fafdff7ddde002df1ee6a1753d9ddf6c17d629dc5b325b9fa76a1d"
     },
     {
       "id": "christianrecorder_1864_v4_no40_to_52",
@@ -242,7 +242,7 @@
       "bundle_sha256": "ad5127e690974f6ba1a5bf1c13676ab050475eb84a5a37bbf9a6b9e69b64b128",
       "scans": 54,
       "file": "christianrecorder_1864_v4_no40_to_52.json.gz",
-      "sha256": "c754a76d867d03cc1810ec000f2722789cbb7319f89ce3ff0e00e2be8439d113"
+      "sha256": "aa8f5c5c0599dea26d78009cc28988065d8bb6fd507b1ee9808d85cb10f1ca05"
     },
     {
       "id": "christianrecorder_1865_v5_no13_to_25",
@@ -253,7 +253,7 @@
       "bundle_sha256": "2a160274d53fa9bc7d82c44a4c865b61f3998693c6ea4441bf57715c7a75e023",
       "scans": 48,
       "file": "christianrecorder_1865_v5_no13_to_25.json.gz",
-      "sha256": "061d835e25f1984cd87e634377e9505bcd15557f6e521f908df1745be0125823"
+      "sha256": "f5b5da1823db2835ccbb2367de8acc32f5911f644dccbc4866a1413bc6fbd0e1"
     },
     {
       "id": "christianrecorder_1865_v5_no1_to_13",
@@ -264,7 +264,7 @@
       "bundle_sha256": "a8e5b193e1598cd3c5b938bbeb6301189030e16a7c3457319fc564be04c12c69",
       "scans": 43,
       "file": "christianrecorder_1865_v5_no1_to_13.json.gz",
-      "sha256": "121a9142cf8d2d694fd2d916dd83129012b2c364477ab0767ae503e0972cbfe1"
+      "sha256": "5843e768df7cd4ed55d607e8a922e3b1a7bba86e5c87c594eb874860a0f21f0a"
     },
     {
       "id": "christianrecorder_1865_v5_no26_to_39",
@@ -275,7 +275,7 @@
       "bundle_sha256": "8d2ea15e32fc9a25b831c7414a5f82a240efc427f3365d37f182135d1448d56b",
       "scans": 56,
       "file": "christianrecorder_1865_v5_no26_to_39.json.gz",
-      "sha256": "818e281830a4551896417325426ea4281ec3a54776e327665da4be49ca9d4634"
+      "sha256": "688cd75d5e56abbf5b721db3fb763dc46d5793716418589d44e9c5be699cdf0e"
     },
     {
       "id": "christianrecorder_1865_v5_no40_to_52",
@@ -286,7 +286,7 @@
       "bundle_sha256": "cd379f668f78521d615b9c3cb09b3849342f9a4a820e664679a191488bc212cc",
       "scans": 52,
       "file": "christianrecorder_1865_v5_no40_to_52.json.gz",
-      "sha256": "95f8d2a43ebe659a838fccaa5f3f2f27221fa2ea61af89123ed0569d66dc7961"
+      "sha256": "691ecd653675dbe3f574db0aeab675b128bd952e622594285ed95382598d4931"
     },
     {
       "id": "christianrecorder_1866_v6_no14_to_26",
@@ -297,7 +297,7 @@
       "bundle_sha256": "421f2fd933ab782873a04ad3dc26d02de52d589b5b5d3321f7f9dd1e294bdd9f",
       "scans": 50,
       "file": "christianrecorder_1866_v6_no14_to_26.json.gz",
-      "sha256": "5297255e55a457b6897b870bf413c0fbfaa713d022a253ef1883c2b58e1a8b03"
+      "sha256": "0d3aefeb322a2cfeccd8ac0fdb4627ddd0da4dc4c9c4b0eb8da687d5c16131a3"
     },
     {
       "id": "christianrecorder_1866_v6_no1_to_13",
@@ -308,7 +308,7 @@
       "bundle_sha256": "15bf366852207537b4b21992dd10f3f5902e077ce825b0a4dd6bad9772038999",
       "scans": 51,
       "file": "christianrecorder_1866_v6_no1_to_13.json.gz",
-      "sha256": "cf720b272af4581acb127e7d043dc52fdd972348152a0adb42d253fcc4a6c232"
+      "sha256": "efe7994190c6a09f0a8655e5f494ab24ba3cabbe225a522fb0ec1d0ffd029016"
     },
     {
       "id": "christianrecorder_1866_v6_no27_to_39",
@@ -319,7 +319,7 @@
       "bundle_sha256": "5033e091f3827f174445eb0cd8f55a314e162e1395a75307bef3f3b5faafcf27",
       "scans": 51,
       "file": "christianrecorder_1866_v6_no27_to_39.json.gz",
-      "sha256": "4b24818ed2a6df6ab872e35b228dfbb02ff757e117617c6d23734cc8df12e88f"
+      "sha256": "a8a6fdef36fe75344540491cbdd33091a1b9790ce4470794a060a333acec488d"
     },
     {
       "id": "christianrecorder_1866_v6_no40_to_52",
@@ -330,7 +330,7 @@
       "bundle_sha256": "e36a2e14c20ab4e4a76abc595e75b4c1515d126c6defac3b2163850b65e58519",
       "scans": 55,
       "file": "christianrecorder_1866_v6_no40_to_52.json.gz",
-      "sha256": "5dd05a86ee53bbf88d6e3553abbba4c1f7f64f88ba5efb0a5286facdbd3ef3fc"
+      "sha256": "60bc3474f4dc4ff27018585746fd93ecaac4af139ffa5f4d1259b18410ad4eb0"
     },
     {
       "id": "christianrecorder_1867_v7_no14_26",
@@ -341,7 +341,7 @@
       "bundle_sha256": "9d5ef474ae77431048bb5211e1ec3fc0f24f802d66fd2c38bdf445104a2653e1",
       "scans": 51,
       "file": "christianrecorder_1867_v7_no14_26.json.gz",
-      "sha256": "d41024d6b7b92e6a0178edbacc54b78f6411d6c9094e9d9a4fd65fa9ada4ca9f"
+      "sha256": "667ac214281d3b369f42ce6f78e9f44e2d8d60e53aa8eefc560aac591abdf465"
     },
     {
       "id": "christianrecorder_1867_v7_no1_to_13",
@@ -352,7 +352,7 @@
       "bundle_sha256": "0fcd221fbbfccdf82d628be547e5105db5a626415501d79ede9b10deb6f75560",
       "scans": 51,
       "file": "christianrecorder_1867_v7_no1_to_13.json.gz",
-      "sha256": "074f484f3934c69600efb75da7d65c0508fe90a2700f9927f25ea50cf41004b8"
+      "sha256": "a1adb60cc0feedd1464c316e939037ea087c8fc791387b83bfac88d4ec487594"
     },
     {
       "id": "christianrecorder_1867_v7_no27_to_39",
@@ -363,7 +363,7 @@
       "bundle_sha256": "a001d8e5180f62197a828dd06e7e8eb7e688ef46496f10bb23832b795bf5aaf6",
       "scans": 53,
       "file": "christianrecorder_1867_v7_no27_to_39.json.gz",
-      "sha256": "6dd4030e65a51d0d666549dfa56a6c3a68aea2ca6663e00073278539de28bb7d"
+      "sha256": "012621955eea6990e2f3cda94db6d825b47579a39a6b491d814d28dd8f7aaa41"
     },
     {
       "id": "christianrecorder_1867_v7_no40_to_52",
@@ -374,7 +374,7 @@
       "bundle_sha256": "37493c9e9536319ee783fbf91eec2fb1a720c4fd571c35f8ceb3ef14245dfcee",
       "scans": 52,
       "file": "christianrecorder_1867_v7_no40_to_52.json.gz",
-      "sha256": "0c36762265e7b212f586e122d945b69ed9c28be61bee403446467374a5eed670"
+      "sha256": "26d4bb4b108079e0e19c429a5628845a3e65c876d120e9bb153d05e8d06abf31"
     },
     {
       "id": "christianrecorder_1868_v8_no16_to_28",
@@ -385,7 +385,7 @@
       "bundle_sha256": "2395d0ca9922a6639244734babe019a2daeb019b591e072aa4dea7f0d616365f",
       "scans": 53,
       "file": "christianrecorder_1868_v8_no16_to_28.json.gz",
-      "sha256": "e51b7e5b0d149b61808321999ad7f28e205dd4fb844b5e336004bb9850816340"
+      "sha256": "6071053349a9872294fb515ba55ec37b70fa67147a8e034cc51ae8784c585706"
     },
     {
       "id": "christianrecorder_1868_v8_no1_to_6",
@@ -396,7 +396,7 @@
       "bundle_sha256": "95fb89f14c3d40a2b745c799bf645f18ac100b01763ae320f7ef2786fb140746",
       "scans": 27,
       "file": "christianrecorder_1868_v8_no1_to_6.json.gz",
-      "sha256": "469ed434a84d927561e5b6f4193bb6994ad9f455d4086d4d3d77baffdea88c55"
+      "sha256": "276c0fd0471f02b259aa753c77886b8c6cb92bdc31f705832f7871ff1fa8b931"
     },
     {
       "id": "christianrecorder_1868_v8_no29_to_39",
@@ -407,7 +407,7 @@
       "bundle_sha256": "525adfe6e0e6b0e171da826ee8b5c4f803cb3f0863862e1dc744c97075a2305a",
       "scans": 41,
       "file": "christianrecorder_1868_v8_no29_to_39.json.gz",
-      "sha256": "ddeff4866bf17977cda6a2bb756c1ab887e40fe6bdb03793bca95cc9b8114602"
+      "sha256": "5f1daedc51d21ccf997e35f198f1375bc71a7a27a18ab5e4866a7804f340bf2d"
     },
     {
       "id": "christianrecorder_1868_v8_no8_to_15",
@@ -418,7 +418,7 @@
       "bundle_sha256": "8fda3b02d778fe7e8a0ebdbeeef584954f44247636cb4d480783fd2b428ce77a",
       "scans": 31,
       "file": "christianrecorder_1868_v8_no8_to_15.json.gz",
-      "sha256": "332724357fac7722f6be8d441f135f04c54ca1257d351e9b42a51eec6b2fb45c"
+      "sha256": "cb968cfcd7df67828ae517e5f97b84ced110bf08f9397fbf14575b839dcaf524"
     },
     {
       "id": "christianrecorder_1869_v9_new_no418_to_430",
@@ -429,7 +429,7 @@
       "bundle_sha256": "3a7213bbb98f0044f91e2f921d0d188ef06300bab81cf56968c019e8cbd4ad6c",
       "scans": 33,
       "file": "christianrecorder_1869_v9_new_no418_to_430.json.gz",
-      "sha256": "55eb89b1305d2bce0a835e55bd98f8579df895cec0e1410f85d729b8c4394f73"
+      "sha256": "29f4ac952c4da9b22ddb013f410f9349e7ed062d7eee72df63c3633837f398af"
     },
     {
       "id": "christianrecorder_1869_v9_new_no431_to_445",
@@ -440,7 +440,7 @@
       "bundle_sha256": "a13cf4217cfa3aef3c29fa6e72eb67d193b62999505976512057cfb9c449fef2",
       "scans": 31,
       "file": "christianrecorder_1869_v9_new_no431_to_445.json.gz",
-      "sha256": "914ebb7a01bf28271b2ff7472051a149cd2c5b30f40aaf152ebdaf4e049a35ad"
+      "sha256": "10ed4ae40ff3a7dc6df82b870afdee3c9c284602e1ab9f9280dae681f4a76d1d"
     },
     {
       "id": "christianrecorder_1869_v9_no14_to_16",
@@ -451,7 +451,7 @@
       "bundle_sha256": "d12a2ab3975457b25edcd3a1b253fe0bb997857084739dc8d372379c3cd3e4b5",
       "scans": 12,
       "file": "christianrecorder_1869_v9_no14_to_16.json.gz",
-      "sha256": "0e8c4758e3377adecef56fc56babe1fafb5fcdd4c561538ea7d5a2e4cb2b7bf5"
+      "sha256": "07d95f6e3ae2a9873841f4ddb6e098da470a4eda11dbdd15ca015308359c0986"
     },
     {
       "id": "christianrecorder_1869_v9_no1_to_13",
@@ -462,7 +462,7 @@
       "bundle_sha256": "4fc4f98039bde1b9bdb47d22ddb0108238328a714b2d385dd7368e1840cd3429",
       "scans": 52,
       "file": "christianrecorder_1869_v9_no1_to_13.json.gz",
-      "sha256": "b316d3f42522803678a7464faee1bcf80200c7c8c869993c24baf7a3bd65f260"
+      "sha256": "dae9e62120526ca416b12003e89195451e2a98223f7e0ad44f80c708fff06257"
     },
     {
       "id": "christianrecorder_1870_no447_to_459",
@@ -473,7 +473,7 @@
       "bundle_sha256": "790a57f532c897f940bdd9d98e46c2c074de155d496ba8e6cb6782c304170f5a",
       "scans": 32,
       "file": "christianrecorder_1870_no447_to_459.json.gz",
-      "sha256": "4dd58bf6ba04df313c7b84b36b851e3dfd934cb765bd77fffb8a8aee01a90f97"
+      "sha256": "b18579fe87814e549f94e92f448d3641bafaa648673d9593a8a43647be1f612b"
     },
     {
       "id": "christianrecorder_1870_no460_to_473",
@@ -484,13 +484,13 @@
       "bundle_sha256": "4fa600c2dd70d0a6fe06476ac522ebf17a24651a5cb3fe475b41ec69ca8bef01",
       "scans": 29,
       "file": "christianrecorder_1870_no460_to_473.json.gz",
-      "sha256": "33e3703b0de03b54975b1c87a6cfd268bd357bbd4e7f1fc093a7c3cfc80d9bb0"
+      "sha256": "fdeb7f0ef16dc2e5982ec678cb9d779c867a105b7c160214361e8243d8813113"
     }
   ],
   "scans": 2376,
-  "text_bytes": 121383823,
-  "word_tokens": 21127105,
-  "flagged_scans": 435,
+  "text_bytes": 120418990,
+  "word_tokens": 20847128,
+  "flagged_scans": 1169,
   "numbering": "One-based scan sequence within each source bundle; not printed pagination. A scan can contain two pages.",
   "model": {
     "name": "zai-org/GLM-OCR",
@@ -498,6 +498,28 @@
     "vllm": "0.28.0",
     "image_digest": "sha256:61fc8a896b0a4fbbbdc063bc4b0dbc25ce98e02b5050c24aeb7830ac02039b14",
     "preparation_version": 4,
-    "scheduler": "Initial eager four-way; later cross-page queue and decode CUDA graphs. Original per-page artifacts retain exact session provenance."
+    "scheduler": "Initial eager four-way; later cross-page queue and decode CUDA graphs. Original per-page artifacts retain exact session provenance. Targeted v5 source-footprint recropping: up to 900px height, tilted printed-rule cuts, streaming loop cancellation; unresolved wide regions retain prior text."
+  },
+  "reprocessing": {
+    "outcomes": {
+      "retained_candidates": 2256,
+      "selected_chunks": 4189
+    },
+    "output_run": "glm-full-archive-v5-20260929",
+    "pages": 2376,
+    "flagged_pages": 1169,
+    "queue_sha256": "52bd293efdc9ae7a8f431be9711f65b37dbe5f2768358ffbc8475069fa58a82f",
+    "source_run": "glm-full-archive-v4-20260925",
+    "policy": {
+      "max_height": 900,
+      "unresolved_width": 1000,
+      "min_rule_support": 0.65,
+      "rule_window_height": "source footprint with tilted printed-rule detection; no arbitrary width splitting",
+      "max_children": 64,
+      "selection": "Select clean rerun; retain v4 if new errors/loops/empty with source ink. No quality-proof claim."
+    },
+    "targeted_chunks": 6445,
+    "targeted_scans": 1496,
+    "note": "Automated selection, not human-verified correction. Unresolved candidates retain original text with flags; all prior artifacts preserved in the research workspace."
   }
 }

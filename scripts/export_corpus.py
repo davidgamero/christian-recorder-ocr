@@ -35,6 +35,15 @@ def export(data, run):
                "model": {"name": "zai-org/GLM-OCR", "revision": "2e85a62840ccac27daa451df36c736c4636b8628",
                          "vllm": "0.28.0", "image_digest": "sha256:61fc8a896b0a4fbbbdc063bc4b0dbc25ce98e02b5050c24aeb7830ac02039b14",
                          "preparation_version": 4, "scheduler": "Initial eager four-way; later cross-page queue and decode CUDA graphs. Original per-page artifacts retain exact session provenance."}}
+    reprocess = data / 'reprocessing/multiple-warnings-v2/assembly.json'
+    if reprocess.exists() and read(reprocess)['output_run'] == run.name:
+        catalog['reprocessing'] = read(reprocess)
+        queue=read(reprocess.with_name('queue.json'))
+        catalog['reprocessing'].update(queue_sha256=sha(reprocess.with_name('queue.json')),
+            source_run=queue['source_run'],policy=queue['policy'],
+            targeted_chunks=len(queue['tasks']),targeted_scans=len({t['page_id'] for t in queue['tasks']}),
+            note='Automated selection, not human-verified correction. Unresolved candidates retain original text with flags; all prior artifacts preserved in the research workspace.')
+        catalog['model']['scheduler'] += ' Targeted v5 source-footprint recropping: up to 900px height, tilted printed-rule cuts, streaming loop cancellation; unresolved wide regions retain prior text.'
     for source_id, source in sorted(inventory["sources"].items()):
         if not re.fullmatch(r"[A-Za-z0-9_-]+", source_id):
             raise ValueError("Unsafe source ID")
@@ -60,6 +69,7 @@ def export(data, run):
                       "result_sha256": sha(path), "status": result["status"], "text": result["text"],
                       "flags": result.get("flagged", {}), "layout_flags": result.get("layout_flags", []),
                       "errors": result.get("errors", []), "chunks": result["chunks"],
+                      "reprocessing": result.get("reprocessing"),
                       "original": {"kind": baseline["kind"], "text": baseline["text"],
                                    "artifact_sha256": baseline["provenance"]["sha256"]} if baseline else None}
             volume["pages"].append(public)

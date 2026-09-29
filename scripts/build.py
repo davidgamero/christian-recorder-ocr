@@ -53,7 +53,7 @@ def transcription(text, position=None, loop_tasks=None):
             n += 1
             progress = round(100 * (span['start'] + paragraph.start()) / max(1, len(text)))
             leaf = f"Leaf {int(span['leaf'].split('-')[-1])+1} · " if span.get('leaf') and span['leaf_count'] > 1 else ''
-            location = 'Masthead' if span['kind'] == 'header' else 'Sparse region' if span['kind'] == 'sparse' else f"Column {span['column']+1}" if span['column'] is not None else 'Source crop'
+            location = span.get('region_label') or ('Masthead' if span['kind'] == 'header' else 'Sparse region' if span['kind'] == 'sparse' else f"Column {span['column']+1}" if span['column'] is not None else 'Source crop')
             label = f'{progress}% through text · {leaf}{location}'
             loop = (loop_tasks or {}).get(span.get('task'))
             warning = '<span class="loop-warning" data-pagefind-ignore>Possible model loop · check the original</span>' if loop else ''
@@ -90,6 +90,8 @@ def main():
     catalog = json.loads((ROOT / "corpus/catalog.json").read_text())
     comparison = json.loads((ROOT / 'corpus/comparison.json').read_text())
     loop_audit = json.loads((ROOT / 'corpus/loop-audit.json').read_text())
+    if loop_audit['run'] != catalog['run']:
+        raise ValueError('Loop audit does not match published corpus')
     positions = json.loads(gzip.decompress((ROOT / 'corpus/positions.json.gz').read_bytes()))
     if comparison['paired_scans'] != catalog['scans'] or comparison['run'] != catalog['run']:
         raise ValueError('Comparison statistics do not match the published corpus')
@@ -138,6 +140,7 @@ def main():
 <p data-pagefind-filter="Loop audit">{'Possible model loop' if loop_tasks else 'No high-loop candidate'}</p>
 <p>Scan positions include cards and two-page spreads—not printed page numbers.</p>
 <p>Original member: <code>{e(page['source_page'])}</code></p><p>Output flags: {e(flags)}</p><p>Layout flags: {e(', '.join(page['layout_flags']) or 'none')}</p>
+<p>{e('Targeted rerun: '+str(len((page.get('reprocessing') or {}).get('selected_parent_chunks',[])))+' parent chunks replaced; '+str(len((page.get('reprocessing') or {}).get('retained_parent_chunks',[])))+' retained for review.' if page.get('reprocessing') else 'Original v4 extraction.')}</p>
 <p>Source SHA-256: <code>{page['image_sha256']}</code></p></details>
 <details class="original-comparison" data-pagefind-ignore><summary>Compare original OCR</summary>{original}</details></div>
 <aside id="match-navigation" class="match-navigation" data-pagefind-ignore aria-label="Reading tools">
@@ -183,11 +186,14 @@ def main():
 <div><strong>+{comparison['recognized_word_increase_pct']:.0f}%</strong><h3>More recognized words</h3><p>{original_stats['recognized_words']/1e6:.1f}m → {glm_stats['recognized_words']/1e6:.1f}m dictionary matches</p></div>
 <div><strong>{original_stats['unrecognized_pct']:.1f}% → {glm_stats['unrecognized_pct']:.1f}%</strong><h3>Fewer unrecognized forms</h3><p>Share absent from the word list</p></div></div>
 <p class="fine-print">Same {comparison['paired_scans']:,} scans. Dictionary coverage isn’t accuracy; names, omissions and repetition need review. <a href="{url('about/#comparison')}">How we measured ↗</a></p>
-<p class="fine-print">Loop checks now flag suspect passages; targeted smaller-crop repairs are queued. <a href="{url('about/#loop-repair')}">Repair status ↗</a></p>
+<p class="fine-print">{e(loop_audit['repair_status'])} <a href="{url('about/#loop-repair')}">Rerun details ↗</a></p>
 {story}
 <p class="fine-print">Illustrated workflow; crop links, not verified word coordinates. {catalog['flagged_scans']:,} scans have output flags. <a href="{url('about/#extraction')}">Real crop overlays ↗</a></p></div></details>'''
     write('index.html', shell('Search the archive', home, search=True))
     about = (SRC / 'content/about.html').read_text()
+    if catalog.get('reprocessing'):
+        changes = catalog['reprocessing']['outcomes']
+        about = about.replace('<!-- reprocessing-summary -->', f"<p>{changes['selected_chunks']:,} parent chunks replaced after automatic checks; {changes['retained_candidates']:,} retained with unresolved flags. Current published text: {catalog['text_bytes']/1e6:.1f} MB / {catalog['word_tokens']/1e6:.2f} million whitespace-separated tokens. This is not human-verified correction.</p>")
     about = about.replace('<!-- extraction-figures -->', f'<div class="process-grid"><figure><img src="{url("assets/figures/columns.svg")}" alt="Column proposals and masthead cutoff"><figcaption>Detected columns · green gutters, blue masthead.</figcaption></figure><figure><img src="{url("assets/figures/chunks.svg")}" alt="Source-mapped OCR chunk polygons"><figcaption>Short chunks · the model receives one crop at a time.</figcaption></figure></div><p><a href="{url("assets/figures/provenance.json")}">Figure provenance and saved crop polygon</a> · <a href="{url("scans/"+figure["page_id"]+"/")}">Example transcription and original scan</a></p>')
     write('about/index.html', shell('Methods, findings and limitations', about))
     write('.nojekyll', '')

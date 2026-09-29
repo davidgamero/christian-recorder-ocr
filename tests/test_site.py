@@ -51,6 +51,15 @@ class SiteTests(unittest.TestCase):
         self.assertIn('class="loop-warning" data-pagefind-ignore',result)
         self.assertIn(text,result)
 
+    def test_recrop_does_not_claim_parent_column_identity(self):
+        text='A recropped passage.'
+        position={'text_sha256':hashlib.sha256(text.encode()).hexdigest(),'spans':[
+            {'start':0,'end':len(text),'task':'recrop','leaf':None,'leaf_count':1,'column':0,'kind':'column',
+             'region_label':'Recrop region (column unverified)'}]}
+        result=transcription(text,position)
+        self.assertIn('Recrop region (column unverified)',result)
+        self.assertNotIn('Column 1',result)
+
     def test_archive_leaf_not_scan_ordinal(self):
         viewer, member = source_links({"id":"volume", "archive_url":"https://archive.org/details/volume"},
                                       {"number":3,"source_page":"volume_jp2/volume_0017.jp2"})

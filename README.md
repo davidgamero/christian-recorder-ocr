@@ -4,7 +4,9 @@
 
 [original source catalog — penn](https://onlinebooks.library.upenn.edu/webbin/serial?id=christrecordame) · [browse volumes + archived originals](https://davidgamero.github.io/christian-recorder-ocr/volumes/) · [methods + caveats](https://davidgamero.github.io/christian-recorder-ocr/about/)
 
-2,376 scans, 44 volumes, 21.1 million word tokens. 121.4 mb of extracted text from *the christian recorder*, the african methodist episcopal church's newspaper. searchable on github pages, with links back to the scans.
+<!-- corpus-summary-start -->
+2,376 scans, 44 volumes, 20.85 million word tokens. 120.4 mb of extracted text from *the christian recorder*, the african methodist episcopal church's newspaper. searchable on github pages, with links back to the scans.
+<!-- corpus-summary-end -->
 
 search links keep your query in `?q=…`. open a result to highlight exact matches and jump between them. quoted phrases stay together; word variants found by search may not have exact highlights.
 
@@ -29,11 +31,25 @@ speed test, same 44 chunks/headers, two repeats:
 | 8 requests, eager | 57.6s | 1.60× |
 | **4 requests, cuda graphs** | **26.8s** | **3.43×** |
 
-final run: **all 2,376 scans processed**, zero failed pages, **435 scans with output flags**. finished doesn't mean flawless. pilot accuracy covers only 244 reference words, not full-page recall. request times are summed latency; deepseek used two concurrent calls, initial local tests used one.
+original v4 run: **all 2,376 scans processed**, zero failed pages, **435 scans with output flags**. the current snapshot includes the targeted v5 pass below. finished doesn't mean flawless. pilot accuracy covers only 244 reference words, not full-page recall. request times are summed latency; deepseek used two concurrent calls, initial local tests used one.
 
 ## how we got here
 
-**loop repair update:** a full audit found 434 high-loop candidates among 60,065 chunks. source-confirmed repeated poems/ads are preserved. the site now labels suspect passages and adds a model-loop filter. **442 targeted repairs are queued**, waiting for a successful sglang/vllm benchmark and gpu restoration. published text is not replaced yet. the repair worker checks crop geometry, splits into smaller pieces, cancels strong streaming loops and stops after two retry rounds, keeping every attempt and source coordinate.
+<!-- reprocessing-start -->
+**targeted v5 update:** reprocessed **6,445 chunks across 1,496 scans**: all 464 known-failure and 5,981 multiple-warning candidates. **4,189 replacements selected; 2,256 originals retained with unresolved flags.** the new dataset is `glm-full-archive-v5-20260929`.
+
+| check | original v4 | published v5 |
+|---|---:|---:|
+| response chunks | 60,065 | 70,084 |
+| high repetition candidates | 434 | 178 |
+| scans with high repetition | 377 | 169 |
+| repeated-phrase footprint | 3.47% | 1.55% |
+| scans with output/unresolved flags | 435 | 1,169 |
+
+new crops use detected printed rules, up to 900 pixels of height, and bounded streaming recognition. unresolved wide geometry, errors, empty output, repetition and suspicious volume changes keep the prior text. flags now also include unresolved rerun candidates, so the flag counts aren't a like-for-like accuracy comparison. source-confirmed repeated poems and ads stay intact. the repetition filter and search index were rebuilt from this snapshot. these are automatic diagnostics, not measured transcription accuracy.
+<!-- reprocessing-end -->
+
+an earlier 442-candidate loop repair passed many automatic checks, but source review found clipped columns and omissions. we kept those attempts separate. the new pass reads the original scan pixels and cuts at detected, possibly tilted, printed rules. an equal-width fallback was discarded after a preview showed it cutting through text. missing gutters, clipped exterior edges and reading order still need source review; clean output is not proof of completeness.
 
 **1. start with tesseract.** learned a column template, aligned curved gutters, and tried overlapping strips. kept source coordinates so every reading could be checked against the image.
 
@@ -45,7 +61,7 @@ final run: **all 2,376 scans processed**, zero failed pages, **435 scans with ou
 
 **5. keep the evidence.** saved original archive ocr separately, tracked word frequencies and repetition, and reviewed 300 priority word types with ai reviewers. names, historical spelling and ad codes aren't automatically gibberish. dictionary-valid words can still be wrong.
 
-**6. publish it.** static html + pagefind 1.5.2. search runs in your browser. original ocr loads on demand and stays out of the search index. full build: **455.5 mb**, including **96.2 mb of search data**. images stay at internet archive.
+**6. publish it.** static html + pagefind 1.5.2. search runs in your browser. original ocr loads on demand and stays out of the search index. images stay at internet archive. every dataset refresh rebuilds paragraph offsets, repetition labels, comparison statistics and search.
 
 ## source details
 
@@ -53,7 +69,7 @@ final run: **all 2,376 scans processed**, zero failed pages, **435 scans with ou
 - downloaded jp2 bundles slowly: one connection, 512 kib/s, 15-second pauses, checksums and backoff. actual files totaled 2,376 scans, one fewer than the metadata estimate.
 - scan numbers include separator cards and sometimes two printed pages. **they aren't printed newspaper page numbers.** year labels come from source metadata; unknown dates stay undated.
 - the comparison text is archive's page-mapped ocr derivative, not a verified copy of each pdf text layer. source member names and hashes are published with each scan.
-- model: `zai-org/GLM-OCR`, revision `2e85a62840ccac27daa451df36c736c4636b8628`; vllm `0.28.0`, bf16, preparation v4, `Text Recognition:` prompt. earlier pages used eager execution; later pages used cuda graphs. exact public model metadata is in `corpus/catalog.json`.
+- model: `zai-org/GLM-OCR`, revision `2e85a62840ccac27daa451df36c736c4636b8628`; vllm `0.28.0`, bf16, v4 preparation with targeted v5 source-region recropping, `Text Recognition:` prompt. earlier pages used eager execution; later pages and the targeted rerun used cuda graphs. exact public model metadata is in `corpus/catalog.json`.
 
 ## build / publish
 
@@ -78,10 +94,11 @@ npm run serve
 refresh from the recorder research workspace:
 
 ```sh
-python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data
+python3 scripts/export_corpus.py --data /path/to/andrew-newspaper/data --run glm-full-archive-v5-20260929
 python3 scripts/export_positions.py --data /path/to/andrew-newspaper/data
 python3 scripts/export_loop_audit.py --data /path/to/andrew-newspaper/data
-python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v4-20260925/report.json
+python3 scripts/export_comparison.py /path/to/data/lexical-comparison/glm-full-archive-v5-20260929/report.json
+python3 scripts/update_results_readme.py
 # optional: regenerate source-derived teaching figures (requires pillow)
 python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 ```
@@ -90,7 +107,10 @@ python3 scripts/export_visuals.py --data /path/to/andrew-newspaper/data
 
 optional browser checks (playwright + chromium): `python3 tests/browser_smoke.py` and `python3 tests/mobile_audit.py`. the mobile audit covers 40 views at 320/390/430/768px: search, filters, reading controls, original ocr, source details, volume browsing, project and 404. checks include overflow, primary touch targets and highlighted text staying below the sticky bar.
 
-the front-page stats compare all 2,376 matched scans: **19% more lexical word tokens**, **55% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**. the baseline is archive ocr, not verified pdf-embedded text. these measure coverage, not correctness. five small svg diagrams tell the story: scan → layout → chunks → parallel ocr → search. real crop overlays live on the project page; neither view claims word-level alignment.
+<!-- comparison-start -->
+the front-page stats compare all 2,376 matched scans: **18% more lexical word tokens**, **54% more dictionary-recognized tokens**, and unrecognized forms falling from **25.1% to 2.1%**.
+<!-- comparison-end -->
+the baseline is archive ocr, not verified pdf-embedded text. these measure dictionary coverage, not correctness. five small svg diagrams tell the story: scan → layout → chunks → parallel ocr → search. real v4 crop overlays live on the project page; neither view claims word-level alignment.
 
 ## use it as a finding aid
 

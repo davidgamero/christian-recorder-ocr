@@ -7,7 +7,11 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def export(data):
-    audit=json.loads((data/'audits/repetition-v4/report.json').read_text())
+    catalog=json.loads((ROOT/'corpus/catalog.json').read_text())
+    version='v5' if catalog.get('reprocessing') else 'v4'
+    audit=json.loads((data/f'audits/repetition-{version}/report.json').read_text())
+    if audit['run'] != catalog['run']:
+        raise ValueError('Run the repetition audit for the published run first')
     reviews=json.loads((data/'audits/repetition-v4/inspection.json').read_text())['reviews']
     decisions={(r['page_id'],r['task_id']):r['classification'] for r in reviews}
     pages={}
@@ -20,10 +24,11 @@ def export(data):
         pages.setdefault(candidate['page_id'],{})[candidate['task_id']]={
             'status':state,'repeated_pct':candidate['redundant_phrase_pct'],
             'finish_reason':candidate['finish_reason']}
+    status='Published text includes targeted source-region reprocessing; unresolved candidates retain earlier text and flags.' if version=='v5' else 'Original v4 output; targeted repairs are stored separately.'
     result={'schema':1,'run':audit['run'],'audited_chunks':audit['totals']['chunks'],
             'high_candidate_chunks':audit['totals']['high_chunks'],'high_candidate_scans':audit['high_pages'],
-            'repeated_phrase_pct':audit['redundant_phrase_pct'],'targeted_repair_chunks':442,
-            'repair_status':'Queued; waiting for a successful engine benchmark and restored GPU workload. Published text is not yet replaced.',
+            'repeated_phrase_pct':audit['redundant_phrase_pct'],
+            'repair_status':status,
             'pages':pages,'note':'Automated candidates, not blanket deletion rules; source-confirmed repeated poems/ads excluded from page labels.'}
     (ROOT/'corpus/loop-audit.json').write_text(json.dumps(result,indent=2)+'\n')
 

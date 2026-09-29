@@ -25,6 +25,7 @@ def export(data):
                 leaf = next((x for x in manifest.get('leaves', []) if x['id'] == task.get('leaf_id')), None)
                 spans.append({'start':offset, 'end':offset + len(text), 'task':task['id'],
                               'leaf':task.get('leaf_id'), 'column':task.get('column'),
+                              'region_label':task.get('region_label'),
                               'kind': 'header' if task['mode'] == 'header' else 'sparse' if leaf and leaf['kind'] != 'newspaper' else 'column',
                               'leaf_count':len(manifest.get('leaves', []))})
                 parts.append(text)

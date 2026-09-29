@@ -5,6 +5,7 @@ Requires Playwright + Chromium; build the default project-subpath site first.
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import json
 import threading
 import time
 from urllib.parse import urlsplit, parse_qs
@@ -39,8 +40,9 @@ def main():
             page.goto(base)
             page.locator('pagefind-input input').wait_for()
             assert page.locator('pagefind-input input').bounding_box()['y'] < 350
-            assert '+19%' in page.locator('.stat-columns').inner_text()
-            assert '+55%' in page.locator('.stat-columns').inner_text()
+            comparison=json.loads((ROOT/'corpus/comparison.json').read_text())
+            assert f"+{comparison['word_count_increase_pct']:.0f}%" in page.locator('.stat-columns').inner_text()
+            assert f"+{comparison['recognized_word_increase_pct']:.0f}%" in page.locator('.stat-columns').inner_text()
             assert page.locator('.pipeline-story figure').count() == 5
             assert page.locator('#stats-title').inner_text() == 'What is this?'
             assert page.locator('#search-filters').evaluate('(el)=>el.open')

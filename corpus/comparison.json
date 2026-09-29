@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "run": "glm-full-archive-v4-20260925",
+  "run": "glm-full-archive-v5-20260929",
   "paired_scans": 2376,
   "baseline": "Page-mapped Internet Archive OCR derivative; not verified PDF-embedded text",
   "original": {
@@ -8,21 +8,21 @@
     "recognized_words": 12948292,
     "unrecognized_words": 4344439,
     "unrecognized_pct": 25.12292014488631,
-    "balanced_score": 66.87825709730015,
-    "balanced_score_repetition_adjusted": 66.84496623990982
+    "balanced_score": 67.05459891322006,
+    "balanced_score_repetition_adjusted": 67.02122027587703
   },
   "glm": {
-    "total_words": 20503717,
-    "recognized_words": 20070216,
-    "unrecognized_words": 433501,
-    "unrecognized_pct": 2.114255673739547,
-    "balanced_score": 95.72524374856974,
-    "balanced_score_repetition_adjusted": 93.97902037237884
+    "total_words": 20389676,
+    "recognized_words": 19957369,
+    "unrecognized_words": 432307,
+    "unrecognized_pct": 2.120224960906686,
+    "balanced_score": 95.67958130158213,
+    "balanced_score_repetition_adjusted": 95.06633159559055
   },
-  "word_count_increase_pct": 18.568414670881083,
-  "recognized_word_increase_pct": 55.00280654776708,
-  "scored_at": "2026-09-27T17:34:20.550762+00:00",
-  "report_sha256": "4a48073712a1cb7461b6c8187723a3711985dc3c842ea0e6d33819cd71179575",
+  "word_count_increase_pct": 17.908941045807047,
+  "recognized_word_increase_pct": 54.131286195893644,
+  "scored_at": "2026-09-29T08:43:28.104619+00:00",
+  "report_sha256": "5cbce73662ec090d043dab0e20b8be43c29329de3dc7c494afce4daf2e1bfae4",
   "dictionary_sha256": "e65d99cd074785c2cefc222b3066208e3f229cfb7d53f5734ac5b409ebea1bf2",
   "note": "Lexical word counts differ from whitespace token counts. Dictionary recognition is not transcription accuracy or recall; repetition, omissions and invented text remain possible."
 }
